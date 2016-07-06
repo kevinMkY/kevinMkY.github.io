@@ -1,0 +1,827 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="take something normal and turn it into something extraordinary —— 取于平凡，创出非凡" />
+
+
+
+  <meta name="keywords" content="相机," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KevinMkY's Blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="iOS 自定义相机, UIImagePickerController &amp;amp;&amp;amp; AVCaptureSession (附微信小视频模仿demo)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)">
+<meta property="og:url" content="http://yoursite.com/2016/01/04/自定义相机/index.html">
+<meta property="og:site_name" content="KevinMkY's Blog">
+<meta property="og:description" content="iOS 自定义相机, UIImagePickerController &amp;amp;&amp;amp; AVCaptureSession (附微信小视频模仿demo)">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E6%9C%BA%2FIMG_2768.PNG">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/%E5%B0%8F%E8%A7%86%E9%A2%911111.gif">
+<meta property="og:updated_time" content="2016-01-18T10:54:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)">
+<meta name="twitter:description" content="iOS 自定义相机, UIImagePickerController &amp;amp;&amp;amp; AVCaptureSession (附微信小视频模仿demo)">
+<meta name="twitter:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E6%9C%BA%2FIMG_2768.PNG">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo) | KevinMkY's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68244604-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a43d4774ccab81ad2148caa9f101c13a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">KevinMkY's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oFFquytRAbsGLfvhPT6j','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2016-01-04T14:05:14+08:00" content="2016-01-04">
+            2016-01-04
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/iOS/" itemprop="url" rel="index">
+                  <span itemprop="name">iOS</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2016/01/04/自定义相机/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/04/自定义相机/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote class="blockquote-center"><br><br>iOS 自定义相机, UIImagePickerController &amp;&amp; AVCaptureSession (附微信小视频模仿demo)<br><br></blockquote>
+
+<a id="more"></a>
+<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>今天介绍自定义相机的两种方式,一种是<code>UIImagePickerController</code>,一种是<code>AVCaptureSession</code>.</p>
+<h2 id="UIImagePickerController"><a href="#UIImagePickerController" class="headerlink" title="UIImagePickerController"></a>UIImagePickerController</h2><p><code>UIImagePickerController</code>非常方便简单,是苹果自己封装好了的一套API,效果如下:<br><img src="http://7xn5aw.com1.z0.glb.clouddn.com/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9B%B8%E6%9C%BA%2FIMG_2768.PNG" width="375" height="667"></p>
+<h2 id="AVCaptureSession"><a href="#AVCaptureSession" class="headerlink" title="AVCaptureSession"></a>AVCaptureSession</h2><p>但是上面的 API只能进行简单的相机视图修改,有时无法满足我们的需求.例如我们需要更加复杂的<code>OverlayerView</code>(自定义相机视图)，这时候我们就要自定义一个相机了.<code>AVCaptureSession</code>能帮助我们.</p>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><p>心急的人,完整Demo在最下边儿.其他朋友可依次看下去</p>
+<h2 id="UIImagePickerController-1"><a href="#UIImagePickerController-1" class="headerlink" title="UIImagePickerController"></a>UIImagePickerController</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>首先看到,需要遵守的协议有2个,分别是<code>UINavigationControllerDelegate</code>和<code>UIImagePickerControllerDelegate</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>,<span class="keyword">nonatomic</span>,<span class="keyword">weak</span>)      <span class="keyword">id</span> &lt;<span class="built_in">UINavigationControllerDelegate</span>, <span class="built_in">UIImagePickerControllerDelegate</span>&gt; delegate;	<span class="comment">//需要遵守的协议有2个</span></div></pre></td></tr></table></figure>
+<p>还有一些基本设置,如输入源/媒体类型,还有<code>allowsEditing</code>为 YES 即可允许用户拍照后立即进行编辑,并且出现编辑框<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//基本设置</span></div><div class="line"><span class="variable">@property</span>(nonatomic)           UIImagePickerControllerSourceType     sourceType;			<span class="comment">//图片输入源,相机或者相册,图库</span></div><div class="line"><span class="variable">@property</span>(nonatomic,copy)      NSArray&lt;NSString *&gt;                   *mediaTypes;			<span class="comment">//媒体类型</span></div><div class="line"><span class="variable">@property</span>(nonatomic)           BOOL                                  allowsEditing 			<span class="comment">//是否允许用户编辑</span></div><div class="line"><span class="variable">@property</span>(nonatomic)           BOOL                                  allowsImageEditing 	<span class="comment">//废弃,用上面的即可</span></div></pre></td></tr></table></figure></p>
+<p>这2个属性和视频相关<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@property</span>(nonatomic)           NSTimeInterval                        videoMaximumDuration 	<span class="comment">//最长摄制时间</span></div><div class="line"><span class="variable">@property</span>(nonatomic)           UIImagePickerControllerQualityType    videoQuality 			<span class="comment">//视频摄制质量</span></div></pre></td></tr></table></figure></p>
+<p>这2个和自定义相机视图有关,注意,下面的只有当输入源为<code>UIImagePickerControllerSourceTypeCamera</code>才可用,否则崩溃<br><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="variable">@property</span>(nonatomic)           BOOL                                  showsCameraControls 	<span class="comment">//默认 YES, 设置为 NO 即可关闭所有默认 UI</span></div><div class="line"><span class="variable">@property</span>(nullable, nonatomic,strong) __kindof UIView                *cameraOverlayView  	<span class="comment">//自定义相机覆盖视图</span></div><div class="line"><span class="variable">@property</span>(nonatomic)           CGAffineTransform                     cameraViewTransform 	<span class="comment">//拍摄时屏幕view的transform属性，可以实现旋转，缩放功能</span></div><div class="line"></div><div class="line"><span class="variable">@property</span>(nonatomic) UIImagePickerControllerCameraCaptureMode cameraCaptureMode 			<span class="comment">//设置模式为拍照或者摄像</span></div><div class="line"><span class="variable">@property</span>(nonatomic) UIImagePickerControllerCameraDevice      cameraDevice      			<span class="comment">//默认开启前置/后置摄像头</span></div><div class="line"><span class="variable">@property</span>(nonatomic) UIImagePickerControllerCameraFlashMode   cameraFlashMode				<span class="comment">//设置默认的闪光灯模式,有开/关/自动</span></div></pre></td></tr></table></figure></p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>第一个是判断输入源的,一般用来判断是否支持拍照</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIImagePickerControllerSourceType</span>) &#123;</div><div class="line">    <span class="built_in">UIImagePickerControllerSourceTypePhotoLibrary</span>,		<span class="comment">//图库</span></div><div class="line">    <span class="built_in">UIImagePickerControllerSourceTypeCamera</span>,			<span class="comment">//相机--&gt;这个就是拍照</span></div><div class="line">    <span class="built_in">UIImagePickerControllerSourceTypeSavedPhotosAlbum</span>	<span class="comment">//相册</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">+ (<span class="built_in">BOOL</span>)isSourceTypeAvailable:(<span class="built_in">UIImagePickerControllerSourceType</span>)sourceType;      		<span class="comment">//判断是否支持某种输入源</span></div></pre></td></tr></table></figure>
+<p>这个是判断是否支持前/后置摄像头<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIImagePickerControllerCameraDevice</span>) &#123;</div><div class="line">    <span class="built_in">UIImagePickerControllerCameraDeviceRear</span>,			<span class="comment">//后置</span></div><div class="line">    <span class="built_in">UIImagePickerControllerCameraDeviceFront</span>			<span class="comment">//前置</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">+ (<span class="built_in">BOOL</span>)isCameraDeviceAvailable:(<span class="built_in">UIImagePickerControllerCameraDevice</span>)cameraDevice     <span class="comment">//是否支持前/后置摄像头</span></div></pre></td></tr></table></figure></p>
+<p>拍照/摄像的方法<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> (void)takePicture;		<span class="regexp">//</span>手动调取拍照的方法,也可当做<span class="string">`-imagePickerController:didFinishPickingMediaWithInfo:`</span>代理的回调,无法捕捉动态图像</span></div><div class="line">-<span class="ruby"> (BOOL)startVideoCapture;	<span class="regexp">//</span>开始摄像</span></div><div class="line">-<span class="ruby"> (void)stopVideoCapture;	<span class="regexp">//</span>停止摄像</span></div></pre></td></tr></table></figure></p>
+<h3 id="代理相关"><a href="#代理相关" class="headerlink" title="代理相关"></a>代理相关</h3><p>注意,<code>UIImagePickerController</code>不能直接取消,必须在收到以下代理方法后才可以 <code>dismiss</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">UIImagePickerControllerDelegate</span>&lt;<span class="title">NSObject</span>&gt;</span></div><div class="line"><span class="keyword">@optional</span></div><div class="line"></div><div class="line"><span class="comment">//这个已经废弃了,不用管</span></div><div class="line">- (<span class="keyword">void</span>)imagePickerController:(<span class="built_in">UIImagePickerController</span> *)picker didFinishPickingImage:(<span class="built_in">UIImage</span> *)image editingInfo:(<span class="keyword">nullable</span> <span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span> *,<span class="keyword">id</span>&gt; *)editingInfo;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//主要是下面这2个</span></div><div class="line"><span class="comment">//拍照后,点击使用照片和向此选取照片后都会调用以下代理方法</span></div><div class="line">- (<span class="keyword">void</span>)imagePickerController:(<span class="built_in">UIImagePickerController</span> *)picker didFinishPickingMediaWithInfo:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span> *,<span class="keyword">id</span>&gt; *)info;</div><div class="line"></div><div class="line"><span class="comment">//点击取消的时候会调用,通常在此 dismiss </span></div><div class="line">- (<span class="keyword">void</span>)imagePickerControllerDidCancel:(<span class="built_in">UIImagePickerController</span> *)picker;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<p>保存照片/视频到手机,三个比较重要的方法,记得导入<code>AssetsLibrary.framework</code>,并且在需要调用存储方法的的地方导入<code>&lt;AssetsLibrary/AssetsLibrary.h&gt;</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将照片保存到相册,回调方法必须用 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;</span></div><div class="line"><span class="built_in">UIKIT_EXTERN</span> <span class="keyword">void</span> <span class="built_in">UIImageWriteToSavedPhotosAlbum</span>(<span class="built_in">UIImage</span> *image, __<span class="keyword">nullable</span> <span class="keyword">id</span> completionTarget, __<span class="keyword">nullable</span> SEL completionSelector, <span class="keyword">void</span> * __<span class="keyword">nullable</span> contextInfo);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//是否可以将视频保存到相册,通常在调用下面的方法之前会调用这个</span></div><div class="line"><span class="built_in">UIKIT_EXTERN</span> <span class="built_in">BOOL</span> <span class="built_in">UIVideoAtPathIsCompatibleWithSavedPhotosAlbum</span>(<span class="built_in">NSString</span> *videoPath) <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_1);</div><div class="line"></div><div class="line"><span class="comment">// 将视频保存到相册,回调方法必须用 - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo; </span></div><div class="line"><span class="built_in">UIKIT_EXTERN</span> <span class="keyword">void</span> <span class="built_in">UISaveVideoAtPathToSavedPhotosAlbum</span>(<span class="built_in">NSString</span> *videoPath, __<span class="keyword">nullable</span> <span class="keyword">id</span> completionTarget, __<span class="keyword">nullable</span> SEL completionSelector, <span class="keyword">void</span> * __<span class="keyword">nullable</span> contextInfo) <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">3</span>_1);</div></pre></td></tr></table></figure>
+<p>用法如下</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)savePic</div><div class="line">&#123;</div><div class="line">    <span class="built_in">UIImageWriteToSavedPhotosAlbum</span>(imgPath, <span class="keyword">self</span>, <span class="keyword">@selector</span>(image:didFinishSavingWithError:contextInfo:), <span class="literal">nil</span>);    </div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)image:(<span class="built_in">UIImage</span> *)image didFinishSavingWithError:(<span class="built_in">NSError</span> *)error contextInfo:(<span class="keyword">void</span> *)contextInfo&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (error) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"保存照片过程中发生错误，错误信息:%@"</span>,error.localizedDescription);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"照片保存成功."</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)saveVideo</div><div class="line">&#123;</div><div class="line">    <span class="built_in">UISaveVideoAtPathToSavedPhotosAlbum</span>(videoPath,<span class="keyword">self</span>, <span class="keyword">@selector</span>(video:didFinishSavingWithError:contextInfo:), <span class="literal">nil</span>);<span class="comment">//保存视频到相簿    </span></div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)video:(<span class="built_in">NSString</span> *)videoPath didFinishSavingWithError:(<span class="built_in">NSError</span> *)error contextInfo:(<span class="keyword">void</span> *)contextInfo</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (error) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"保存视频过程中发生错误，错误信息:%@"</span>,error.localizedDescription);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"视频保存成功."</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外一个是<code>ALAssetsLibrary</code>,不过在 iOS9.0 已经全部被废弃了,改成了<code>PHPhotoLibrary</code>(这是 <code>Photos</code> 框架的一个组成部分,完整的可以<a href="http://objccn.io/issue-21-4/" target="_blank" rel="external">点这个链接</a>,关于这个框架的用法,改天再写一个吧)</p>
+<p>9.0及以前的写法<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//保存照片到相册</span></div><div class="line"> [[[ALAssetsLibrary alloc]init] writeImageToSavedPhotosAlbum:[img <span class="built_in">CGImage</span>] orientation:(ALAssetOrientation)img.imageOrientation completionBlock:^(<span class="built_in">NSURL</span> *assetURL, <span class="built_in">NSError</span> *error) &#123;</div><div class="line">    <span class="keyword">if</span> (error) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Save image fail：%@"</span>,error);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Save image succeed."</span>);</div><div class="line">    &#125;</div><div class="line">&#125;];</div><div class="line"></div><div class="line"><span class="comment">//保存视频到相册</span></div><div class="line">[[[ALAssetsLibrary alloc]init] writeVideoAtPathToSavedPhotosAlbum:[<span class="built_in">NSURL</span> URLWithString:videoPath] completionBlock:^(<span class="built_in">NSURL</span> *assetURL, <span class="built_in">NSError</span> *error) &#123;</div><div class="line">       </div><div class="line">    <span class="keyword">if</span> (error) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Save video fail：%@"</span>,error);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"Save video succeed."</span>);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;];</div></pre></td></tr></table></figure></p>
+<h2 id="AVCaptureSession-1"><a href="#AVCaptureSession-1" class="headerlink" title="AVCaptureSession"></a>AVCaptureSession</h2><p>先放上一个微信小视频的模仿 Demo, 因为只能真机,所以比较嘈杂~大家别介意</p>
+<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/%E5%B0%8F%E8%A7%86%E9%A2%911111.gif" alt=""> </p>
+<h3 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h3><p><code>AVCaptureSession</code>通过把设备的麦克风/摄像头(<code>AVCaptureDevice</code>)实例化成数据流输入对象(<code>AVCaptureDeviceInput</code>)后,再通过建立连接(<code>AVCaptionConnection</code>)将录制数据通过数据流输出对象(<code>AVCaptureOutput</code>)导出,而录制的时候咱们可以同步预览当前的录制界面(<code>AVCaptureVideoPreviewLayer</code>).</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">`AVCaptureSession`是一个会话对象,是设备音频/视频整个录制期间的管理者.</div><div class="line">`AVCaptureDevice`其实是咱们的物理设备映射到程序中的一个对象.咱们可以通过其来操作:闪光灯,手电筒,聚焦模式等</div><div class="line">`AVCaptureDeviceInput`是录制期间输入流数据的管理对象.</div><div class="line">`AVCaptionConnection`是将输入流/输出流连接起来的连接对象,视频/音频稳定,预览与录制方向一致都在这里设置,还有audioChannels声道</div><div class="line">`AVCaptureOutput`是输出流数据的管理对象,通过头文件可以看到有很多子类,而我们通常也使用其子类</div><div class="line">`AVCaptureVideoPreviewLayer`是一个 `CALyer` ,可以让我们预览拍摄过程中的图像</div></pre></td></tr></table></figure>
+<h3 id="详解各部分"><a href="#详解各部分" class="headerlink" title="详解各部分"></a>详解各部分</h3><p>此处,咱们就模仿一个微信小视频的 demo, 然后把各个主要步骤写在下面.</p>
+<h4 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h4><p>首先获取授权<code>AVAuthorizationStatus</code>,我们需要获取哪个设备的使用权限,就进行请求,需要注意的是,如果用户未进行授权授权选择,咱们还要重复请求一次.</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取授权</span></div><div class="line">- (<span class="keyword">void</span>)getAuthorization</div><div class="line">&#123;</div><div class="line">    </div><div class="line">    <span class="comment">//此处获取摄像头授权</span></div><div class="line">    <span class="keyword">switch</span> ([<span class="built_in">AVCaptureDevice</span> authorizationStatusForMediaType:<span class="built_in">AVMediaTypeVideo</span>])</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">AVAuthorizationStatusAuthorized</span>:       <span class="comment">//已授权，可使用    The client is authorized to access the hardware supporting a media type.</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">AVAuthorizationStatusNotDetermined</span>:    <span class="comment">//未进行授权选择     Indicates that the user has not yet made a choice regarding whether the client can access the hardware.</span></div><div class="line">        &#123;</div><div class="line">            <span class="comment">//则再次请求授权</span></div><div class="line">            [<span class="built_in">AVCaptureDevice</span> requestAccessForMediaType:<span class="built_in">AVMediaTypeVideo</span> completionHandler:^(<span class="built_in">BOOL</span> granted) &#123;</div><div class="line">                <span class="keyword">if</span>(granted)&#123;    <span class="comment">//用户授权成功</span></div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125; <span class="keyword">else</span> &#123;        <span class="comment">//用户拒绝授权</span></div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;];</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">default</span>:                                    <span class="comment">//用户拒绝授权/未授权</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关枚举</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">     AVAuthorizationStatusNotDetermined = <span class="number">0</span>,<span class="comment">// 未进行授权选择</span></div><div class="line">     </div><div class="line">     AVAuthorizationStatusRestricted,　　　　<span class="comment">// 未授权，且用户无法更新，如家长控制情况下</span></div><div class="line">     </div><div class="line">     AVAuthorizationStatusDenied,　　　　　　 <span class="comment">// 用户拒绝App使用</span></div><div class="line">     </div><div class="line">     AVAuthorizationStatusAuthorized,　　　　<span class="comment">// 已授权，可使用</span></div><div class="line">     */</div></pre></td></tr></table></figure>
+<h4 id="根据流程创建对象"><a href="#根据流程创建对象" class="headerlink" title="根据流程创建对象"></a>根据流程创建对象</h4><h5 id="AVCaptureSession-2"><a href="#AVCaptureSession-2" class="headerlink" title="AVCaptureSession"></a>AVCaptureSession</h5><p>先创建本次小视频的会话对象<code>_captureSession</code>,设置视频分辨率.注意,这个地方设置的模式/分辨率大小将影响你后面拍摄照片/视频的大小</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addSession</div><div class="line">&#123;</div><div class="line">    _captureSession = [[<span class="built_in">AVCaptureSession</span> alloc] init];</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ([_captureSession canSetSessionPreset:<span class="built_in">AVCaptureSessionPreset640x480</span>]) &#123;</div><div class="line">        [_captureSession setSessionPreset:<span class="built_in">AVCaptureSessionPreset640x480</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关枚举</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*  通常支持如下格式</div><div class="line"> (</div><div class="line"> AVAssetExportPresetLowQuality,</div><div class="line"> AVAssetExportPreset<span class="number">960x540</span>,</div><div class="line"> AVAssetExportPreset<span class="number">640x480</span>,</div><div class="line"> AVAssetExportPresetMediumQuality,</div><div class="line"> AVAssetExportPreset<span class="number">1920x1080</span>,</div><div class="line"> AVAssetExportPreset<span class="number">1280x720</span>,</div><div class="line"> AVAssetExportPresetHighestQuality,</div><div class="line"> AVAssetExportPresetAppleM4A</div><div class="line"> )</div><div class="line"> */</div></pre></td></tr></table></figure>
+<h5 id="AVCaptureDevice"><a href="#AVCaptureDevice" class="headerlink" title="AVCaptureDevice"></a>AVCaptureDevice</h5><p>然后咱们要把设备接入进来了,依次是<code>_videoDevice</code>和<code>_audioDevice</code>,还有注意,在给会话信息添加设备对象的时候,需要调用<code>_captureSession</code>的一个方法组<code>beginConfiguration</code>和<code>commitConfiguration</code>,最后,咱们把录制过程中的预览图层<code>PreviewLayer</code>也添加进来,设置完毕后,开启会话<code>startRunning</code>–&gt;注意,不等于开始录制,在不再需要使用会话相关时,还需要<code>stopRunning</code></p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section">[_captureSession beginConfiguration]</span><span class="comment">;</span></div><div class="line"><span class="section"></span></div><div class="line">[self addVideo]<span class="comment">;</span></div><div class="line"><span class="section">[self addAudio]</span><span class="comment">;</span></div><div class="line"><span class="section">[self addPreviewLayer]</span><span class="comment">;</span></div><div class="line"><span class="section">    </span></div><div class="line">[_captureSession commitConfiguration]<span class="comment">;</span></div><div class="line"><span class="section">[_captureSession startRunning]</span><span class="comment">;</span></div></pre></td></tr></table></figure>
+<h6 id="video-相关"><a href="#video-相关" class="headerlink" title="video 相关"></a>video 相关</h6><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addVideo</div><div class="line">&#123;</div><div class="line">    </div><div class="line">    <span class="comment">// 获取摄像头输入设备， 创建 AVCaptureDeviceInput 对象</span></div><div class="line">    _videoDevice = [<span class="keyword">self</span> deviceWithMediaType:<span class="built_in">AVMediaTypeVideo</span> preferringPosition:<span class="built_in">AVCaptureDevicePositionBack</span>];</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> addVideoInput];</div><div class="line">    [<span class="keyword">self</span> addMovieOutput];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关枚举</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/* <span class="type">MediaType</span></div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeVideo</span>                 <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);       //视频</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeAudio</span>                 <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);       //音频</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeText</span>                  <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeClosedCaption</span>         <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeSubtitle</span>              <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeTimecode</span>              <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeMetadata</span>              <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_8, <span class="number">6</span>_0);</div><div class="line">     <span class="type">AVF_EXPORT</span> <span class="type">NSString</span> *const <span class="type">AVMediaTypeMuxed</span>                 <span class="type">NS_AVAILABLE</span>(<span class="number">10</span>_7, <span class="number">4</span>_0);</div><div class="line">     */</div><div class="line">    </div><div class="line">    /* <span class="type">AVCaptureDevicePosition</span></div><div class="line">     typedef <span class="type">NS_ENUM</span>(<span class="type">NSInteger</span>, <span class="type">AVCaptureDevicePosition</span>) &#123;</div><div class="line">     <span class="type">AVCaptureDevicePositionUnspecified</span>         = 0,</div><div class="line">     <span class="type">AVCaptureDevicePositionBack</span>                = 1,            //后置摄像头</div><div class="line">     <span class="type">AVCaptureDevicePositionFront</span>               = 2             //前置摄像头</div><div class="line">     &#125; <span class="type">NS_AVAILABLE</span>(10_7, 4_0) __TVOS_PROHIBITED;</div><div class="line">     */</div></pre></td></tr></table></figure>
+<p>下面是获取摄像头的方法</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark 获取摄像头--&gt;前/后</span></div><div class="line"></div><div class="line">- (<span class="built_in">AVCaptureDevice</span> *)deviceWithMediaType:(<span class="built_in">NSString</span> *)mediaType preferringPosition:(<span class="built_in">AVCaptureDevicePosition</span>)position</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSArray</span> *devices = [<span class="built_in">AVCaptureDevice</span> devicesWithMediaType:mediaType];</div><div class="line">    <span class="built_in">AVCaptureDevice</span> *captureDevice = devices.firstObject;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> ( <span class="built_in">AVCaptureDevice</span> *device <span class="keyword">in</span> devices ) &#123;</div><div class="line">        <span class="keyword">if</span> ( device.position == position ) &#123;</div><div class="line">            captureDevice = device;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> captureDevice;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//下面这2个也可以获取前后摄像头,不过有一定的风险,假如手机又问题,找不到对应的 UniqueID 设备,则呵呵了</span></div><div class="line"><span class="comment">//- (AVCaptureDevice *)frontCamera</span></div><div class="line"><span class="comment">//&#123;</span></div><div class="line"><span class="comment">//    return [AVCaptureDevice deviceWithUniqueID:@"com.apple.avfoundation.avcapturedevice.built-in_video:1"];</span></div><div class="line"><span class="comment">//&#125;</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">//- (AVCaptureDevice *)backCamera</span></div><div class="line"><span class="comment">//&#123;</span></div><div class="line"><span class="comment">//    return [AVCaptureDevice deviceWithUniqueID:@"com.apple.avfoundation.avcapturedevice.built-in_video:0"];</span></div><div class="line"><span class="comment">//&#125;</span></div></pre></td></tr></table></figure>
+<p>添加视频输入对象<code>AVCaptureDeviceInput</code>,根据输入设备初始化输入对象，用户获取输入数据,将视频输入对象添加到会话 (AVCaptureSession) 中</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addVideoInput</div><div class="line">&#123;</div><div class="line">    NSError *videoError;</div><div class="line"></div><div class="line">    _videoInput = [[AVCaptureDeviceInput alloc] <span class="string">initWithDevice:</span>_videoDevice <span class="string">error:</span>&amp;videoError];</div><div class="line">    <span class="keyword">if</span> (videoError) &#123;</div><div class="line">        NSLog(@<span class="string">"---- 取得摄像头设备时出错 ------ %@"</span>,videoError);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ([_captureSession <span class="string">canAddInput:</span>_videoInput]) &#123;</div><div class="line">        [_captureSession <span class="string">addInput:</span>_videoInput];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来是视频输出对象<code>AVCaptureMovieFileOutput</code>及连接管理对象<code>AVCaptureConnection</code>,还有视频稳定设置<code>preferredVideoStabilizationMode</code>,视频旋转方向<code>setVideoOrientation</code>等</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (void)<span class="keyword">addMovieOutput</span></div><div class="line">&#123;</div><div class="line">    _movieOutput = [[AVCaptureMovieFileOutput alloc] init]<span class="comment">;</span></div><div class="line"></div><div class="line">    if ([_captureSession canAddOutput:_movieOutput]) &#123;</div><div class="line">        [_captureSession <span class="keyword">addOutput:_movieOutput];</span></div><div class="line"></div><div class="line">        AVCaptureConnection *captureConnection = [_movieOutput connectionWithMediaType:AVMediaTypeVideo]<span class="comment">;</span></div><div class="line">        if ([captureConnection isVideoStabilizationSupported]) &#123;</div><div class="line">            captureConnection.<span class="keyword">preferredVideoStabilizationMode </span>= AVCaptureVideoStabilizationModeAuto<span class="comment">;</span></div><div class="line">        &#125;</div><div class="line">        captureConnection.videoScaleAndCropFactor = captureConnection.videoMaxScaleAndCropFactor<span class="comment">;</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关枚举<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//设置视频旋转方向</div><div class="line">/*</div><div class="line"> typedef <span class="type">NS_ENUM</span>(<span class="type">NSInteger</span>, <span class="type">AVCaptureVideoOrientation</span>) &#123;</div><div class="line"> <span class="type">AVCaptureVideoOrientationPortrait</span>           = 1,</div><div class="line"> <span class="type">AVCaptureVideoOrientationPortraitUpsideDown</span> = 2,</div><div class="line"> <span class="type">AVCaptureVideoOrientationLandscapeRight</span>     = 3,</div><div class="line"> <span class="type">AVCaptureVideoOrientationLandscapeLeft</span>      = 4,</div><div class="line"> &#125; <span class="type">NS_AVAILABLE</span>(10_7, 4_0) __TVOS_PROHIBITED;</div><div class="line"> */</div></pre></td></tr></table></figure></p>
+<h6 id="audio-相关"><a href="#audio-相关" class="headerlink" title="audio 相关"></a>audio 相关</h6><p>咱们再接着添加音频相关的,包括音频输入设备<code>AVCaptureDevice</code>,音频输入对象<code>AVCaptureDeviceInput</code>,并且将音频输入对象添加到会话</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addAudio</div><div class="line">&#123;</div><div class="line">    NSError *audioError;</div><div class="line">    _audioDevice = [AVCaptureDevice <span class="string">defaultDeviceWithMediaType:</span>AVMediaTypeAudio];</div><div class="line">    _audioInput = [[AVCaptureDeviceInput alloc] <span class="string">initWithDevice:</span>_audioDevice <span class="string">error:</span>&amp;audioError];</div><div class="line">    <span class="keyword">if</span> (audioError) &#123;</div><div class="line">        NSLog(@<span class="string">"取得录音设备时出错 ------ %@"</span>,audioError);</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> ([_captureSession <span class="string">canAddInput:</span>_audioInput]) &#123;</div><div class="line">        [_captureSession <span class="string">addInput:</span>_audioInput];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="AVCaptureVideoPreviewLayer"><a href="#AVCaptureVideoPreviewLayer" class="headerlink" title="AVCaptureVideoPreviewLayer"></a>AVCaptureVideoPreviewLayer</h6><p>通过会话<code>AVCaptureSession</code>创建预览层<code>AVCaptureVideoPreviewLayer</code>,设置填充模式<code>videoGravity</code>,预览图层方向<code>videoOrientation</code>,并且设置 <code>layer</code> 想要显示的位置</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addPreviewLayer</div><div class="line">&#123;</div><div class="line">    _captureVideoPreviewLayer = [[<span class="built_in">AVCaptureVideoPreviewLayer</span> alloc] initWithSession:_captureSession];</div><div class="line">    _captureVideoPreviewLayer.frame = <span class="keyword">self</span>.view.layer.bounds;</div><div class="line"><span class="comment">//    _captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;</span></div><div class="line">    </div><div class="line">    _captureVideoPreviewLayer.connection.videoOrientation = [_movieOutput connectionWithMediaType:<span class="built_in">AVMediaTypeVideo</span>].videoOrientation;</div><div class="line">    _captureVideoPreviewLayer.position = <span class="built_in">CGPointMake</span>(<span class="keyword">self</span>.view.width*<span class="number">0.5</span>,<span class="keyword">self</span>.videoView.height*<span class="number">0.5</span>);</div><div class="line">    </div><div class="line">    <span class="built_in">CALayer</span> *layer = <span class="keyword">self</span>.videoView.layer;</div><div class="line">    layer.masksToBounds = <span class="literal">true</span>;</div><div class="line">    [<span class="keyword">self</span>.view layoutIfNeeded];</div><div class="line">    [layer addSublayer:_captureVideoPreviewLayer];</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关枚举</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/* 填充模式</div><div class="line">     Options are AVLayerVideoGravityResize, AVLayerVideoGravityResizeAspect <span class="keyword">and</span> AVLayerVideoGravityResizeAspectFill. AVLayerVideoGravityResizeAspect <span class="keyword">is</span> <span class="keyword">default</span>.</div><div class="line">     */</div></pre></td></tr></table></figure>
+<p>最后,开始录制视频,结束录制视频,重新录制</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">startRecord</span></div><div class="line">&#123;</div><div class="line">    <span class="selector-attr">[_movieOutput startRecordingToOutputFileURL:[self outPutFileURL]</span> <span class="selector-tag">recordingDelegate</span><span class="selector-pseudo">:self</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">-</span> (NSURL *)<span class="selector-tag">outPutFileURL</span></div><div class="line">&#123;</div><div class="line">    return <span class="selector-attr">[NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), @"outPut.mov"]</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">-</span> (void)<span class="selector-tag">stopRecord</span></div><div class="line">&#123;</div><div class="line">    <span class="selector-attr">[_movieOutput stopRecording]</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="录制相关delegate"><a href="#录制相关delegate" class="headerlink" title="录制相关delegate"></a>录制相关delegate</h5><p>包括开始录制,录制结束等</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)captureOutput:(<span class="built_in">AVCaptureFileOutput</span> *)captureOutput didStartRecordingToOutputFileAtURL:(<span class="built_in">NSURL</span> *)fileURL fromConnections:(<span class="built_in">NSArray</span> *)connections</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---- 开始录制 ----"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)captureOutput:(<span class="built_in">AVCaptureFileOutput</span> *)captureOutput didFinishRecordingToOutputFileAtURL:(<span class="built_in">NSURL</span> *)outputFileURL fromConnections:(<span class="built_in">NSArray</span> *)connections error:(<span class="built_in">NSError</span> *)error</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---- 录制结束 ----%@ "</span>,captureOutput.outputFileURL);</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (<span class="keyword">self</span>.canSave) &#123;</div><div class="line">        [<span class="keyword">self</span> pushToPlay:captureOutput.outputFileURL];</div><div class="line">        <span class="keyword">self</span>.canSave = <span class="literal">NO</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="压缩-保存视频"><a href="#压缩-保存视频" class="headerlink" title="压缩/保存视频"></a>压缩/保存视频</h5><p>咱们需要把录制完毕的视频保存下来.而通常录制完毕的视频是很大的,咱们需要压缩一下再保存.</p>
+<p>可以通过<code>AVAssetExportSession</code>来进行压缩,并且可以优化网络<code>shouldOptimizeForNetworkUse</code>,设置转后的格式<code>outputFileType</code>,并且开启异步压缩<code>exportAsynchronouslyWithCompletionHandler</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#pragma mark 保存压缩</span></div><div class="line">- (<span class="built_in">NSURL</span> *)compressedURL</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> [<span class="built_in">NSURL</span> fileURLWithPath:[[<span class="built_in">NSSearchPathForDirectoriesInDomains</span>(<span class="built_in">NSDocumentDirectory</span>, <span class="built_in">NSUserDomainMask</span>, <span class="literal">true</span>) lastObject] stringByAppendingPathComponent:[<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"compressed.mp4"</span>]]];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="built_in">CGFloat</span>)fileSize:(<span class="built_in">NSURL</span> *)path</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> [[<span class="built_in">NSData</span> dataWithContentsOfURL:path] length]/<span class="number">1024.00</span> /<span class="number">1024.00</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 压缩视频</span></div><div class="line">- (<span class="keyword">IBAction</span>)compressVideo:(<span class="keyword">id</span>)sender</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"开始压缩,压缩前大小 %f MB"</span>,[<span class="keyword">self</span> fileSize:<span class="keyword">self</span>.videoUrl]);</div><div class="line">    </div><div class="line">    <span class="built_in">AVURLAsset</span> *avAsset = [[<span class="built_in">AVURLAsset</span> alloc] initWithURL:<span class="keyword">self</span>.videoUrl options:<span class="literal">nil</span>];</div><div class="line">    <span class="built_in">NSArray</span> *compatiblePresets = [<span class="built_in">AVAssetExportSession</span> exportPresetsCompatibleWithAsset:avAsset];</div><div class="line">    <span class="keyword">if</span> ([compatiblePresets containsObject:<span class="built_in">AVAssetExportPresetLowQuality</span>]) &#123;</div><div class="line">        </div><div class="line">        <span class="built_in">AVAssetExportSession</span> *exportSession = [[<span class="built_in">AVAssetExportSession</span> alloc] initWithAsset:avAsset presetName:<span class="built_in">AVAssetExportPreset640x480</span>];</div><div class="line">        exportSession.outputURL = [<span class="keyword">self</span> compressedURL];</div><div class="line">        exportSession.shouldOptimizeForNetworkUse = <span class="literal">true</span>;</div><div class="line">        exportSession.outputFileType = <span class="built_in">AVFileTypeMPEG4</span>;</div><div class="line">        [exportSession exportAsynchronouslyWithCompletionHandler:^&#123;</div><div class="line">            <span class="keyword">if</span> ([exportSession status] == <span class="built_in">AVAssetExportSessionStatusCompleted</span>) &#123;</div><div class="line">                <span class="built_in">NSLog</span>(<span class="string">@"压缩完毕,压缩后大小 %f MB"</span>,[<span class="keyword">self</span> fileSize:[<span class="keyword">self</span> compressedURL]]);</div><div class="line">                [<span class="keyword">self</span> saveVideo:[<span class="keyword">self</span> compressedURL]];</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                <span class="built_in">NSLog</span>(<span class="string">@"当前压缩进度:%f"</span>,exportSession.progress);</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)saveVideo:(<span class="built_in">NSURL</span> *)outputFileURL</div><div class="line">&#123;</div><div class="line">    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];</div><div class="line">    [library writeVideoAtPathToSavedPhotosAlbum:outputFileURL</div><div class="line">                                completionBlock:^(<span class="built_in">NSURL</span> *assetURL, <span class="built_in">NSError</span> *error) &#123;</div><div class="line">                                    <span class="keyword">if</span> (error) &#123;</div><div class="line">                                        <span class="built_in">NSLog</span>(<span class="string">@"保存视频失败:%@"</span>,error);</div><div class="line">                                    &#125; <span class="keyword">else</span> &#123;</div><div class="line">                                        <span class="built_in">NSLog</span>(<span class="string">@"保存视频到相册成功"</span>);</div><div class="line">                                    &#125;</div><div class="line">                                &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="播放录制完的视频以及重复播放"><a href="#播放录制完的视频以及重复播放" class="headerlink" title="播放录制完的视频以及重复播放"></a>播放录制完的视频以及重复播放</h5><p>播放录制的视频,以及重复播放</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)create</div><div class="line">&#123;</div><div class="line">    _playItem = [<span class="built_in">AVPlayerItem</span> playerItemWithURL:<span class="keyword">self</span>.videoUrl];</div><div class="line">    _player = [<span class="built_in">AVPlayer</span> playerWithPlayerItem:_playItem];</div><div class="line">    _playerLayer =[<span class="built_in">AVPlayerLayer</span> playerLayerWithPlayer:_player];</div><div class="line">    _playerLayer.frame = <span class="built_in">CGRectMake</span>(<span class="number">200</span>, <span class="number">200</span>, <span class="number">100</span>, <span class="number">100</span>);</div><div class="line">    _playerLayer.videoGravity=<span class="built_in">AVLayerVideoGravityResizeAspectFill</span>;<span class="comment">//视频填充模式</span></div><div class="line">    [<span class="keyword">self</span>.view.layer addSublayer:_playerLayer];</div><div class="line">    [_player play];</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)playbackFinished:(<span class="built_in">NSNotification</span> *)notification</div><div class="line">&#123;</div><div class="line">    [_player seekToTime:<span class="built_in">CMTimeMake</span>(<span class="number">0</span>, <span class="number">1</span>)];</div><div class="line">    [_player play];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="交互相关"><a href="#交互相关" class="headerlink" title="交互相关"></a>交互相关</h4><p>接下来,是一些和交互相关的,比如切换摄像头,开关闪光灯,还有白平衡啥的.</p>
+<p>注意,改变设备属性前一定要首先调用<code>lockForConfiguration</code>方法加锁,调用完之后使用<code>unlockForConfiguration</code>方法解锁.</p>
+<p>意义是—进行设备属性修改期间,先锁定设备,防止多处同时修改设备.因为可能有多处不同的修改,咱们将其封装起来最好</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)changeDevicePropertySafety:(<span class="keyword">void</span> (^)(<span class="built_in">AVCaptureDevice</span> *captureDevice))propertyChange&#123;</div><div class="line">    </div><div class="line">    <span class="comment">//也可以直接用_videoDevice,但是下面这种更好</span></div><div class="line">    <span class="built_in">AVCaptureDevice</span> *captureDevice= [_videoInput device];</div><div class="line">    <span class="built_in">NSError</span> *error;</div><div class="line">    </div><div class="line">    <span class="built_in">BOOL</span> lockAcquired = [captureDevice lockForConfiguration:&amp;error];</div><div class="line">    <span class="keyword">if</span> (!lockAcquired) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"锁定设备过程error，错误信息：%@"</span>,error.localizedDescription);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        [_captureSession beginConfiguration];</div><div class="line">        propertyChange(captureDevice);</div><div class="line">        [captureDevice unlockForConfiguration];</div><div class="line">        [_captureSession commitConfiguration];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="开-关闪光灯"><a href="#开-关闪光灯" class="headerlink" title="开/关闪光灯"></a>开/关闪光灯</h5><p>闪光模式开启后,并无明显感觉,所以还需要开启手电筒,并且开启前先判断是否自持,否则崩溃</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)changeFlashlight:(<span class="built_in">UIButton</span> *)sender &#123;</div><div class="line">    </div><div class="line">    <span class="built_in">BOOL</span> con1 = [_videoDevice hasTorch];    <span class="comment">//支持手电筒模式</span></div><div class="line">    <span class="built_in">BOOL</span> con2 = [_videoDevice hasFlash];    <span class="comment">//支持闪光模式</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (con1 &amp;&amp; con2)</div><div class="line">    &#123;</div><div class="line">        [<span class="keyword">self</span> changeDevicePropertySafety:^(<span class="built_in">AVCaptureDevice</span> *captureDevice) &#123;</div><div class="line">            <span class="keyword">if</span> (_videoDevice.flashMode == <span class="built_in">AVCaptureFlashModeOn</span>)         <span class="comment">//闪光灯开</span></div><div class="line">            &#123;</div><div class="line">                [_videoDevice setFlashMode:<span class="built_in">AVCaptureFlashModeOff</span>];</div><div class="line">                [_videoDevice setTorchMode:<span class="built_in">AVCaptureTorchModeOff</span>];</div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (_videoDevice.flashMode == <span class="built_in">AVCaptureFlashModeOff</span>)  <span class="comment">//闪光灯关</span></div><div class="line">            &#123;</div><div class="line">                [_videoDevice setFlashMode:<span class="built_in">AVCaptureFlashModeOn</span>];</div><div class="line">                [_videoDevice setTorchMode:<span class="built_in">AVCaptureTorchModeOn</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;];</div><div class="line">        sender.selected=!sender.isSelected;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"不能切换闪光模式"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="切换摄像头"><a href="#切换摄像头" class="headerlink" title="切换摄像头"></a>切换摄像头</h5><p>根据现在正在使用的摄像头来判断需要切换的摄像头</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">IBAction</span>)changeCamera&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">switch</span> (_videoDevice.position) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">AVCaptureDevicePositionBack</span>:</div><div class="line">            _videoDevice = [<span class="keyword">self</span> deviceWithMediaType:<span class="built_in">AVMediaTypeVideo</span> preferringPosition:<span class="built_in">AVCaptureDevicePositionFront</span>];</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="built_in">AVCaptureDevicePositionFront</span>:</div><div class="line">            _videoDevice = [<span class="keyword">self</span> deviceWithMediaType:<span class="built_in">AVMediaTypeVideo</span> preferringPosition:<span class="built_in">AVCaptureDevicePositionBack</span>];</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> changeDevicePropertySafety:^(<span class="built_in">AVCaptureDevice</span> *captureDevice) &#123;</div><div class="line">        <span class="built_in">NSError</span> *error;</div><div class="line">        <span class="built_in">AVCaptureDeviceInput</span> *newVideoInput = [[<span class="built_in">AVCaptureDeviceInput</span> alloc] initWithDevice:_videoDevice error:&amp;error];</div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (newVideoInput != <span class="literal">nil</span>) &#123;</div><div class="line">            <span class="comment">//必选先 remove 才能询问 canAdd</span></div><div class="line">            [_captureSession removeInput:_videoInput];</div><div class="line">            <span class="keyword">if</span> ([_captureSession canAddInput:newVideoInput]) &#123;</div><div class="line">                [_captureSession addInput:newVideoInput];</div><div class="line">                _videoInput = newVideoInput;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                [_captureSession addInput:_videoInput];</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (error) &#123;</div><div class="line">            <span class="built_in">NSLog</span>(<span class="string">@"切换前/后摄像头失败, error = %@"</span>, error);</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="聚焦模式-曝光模式-拉近-远镜头-焦距"><a href="#聚焦模式-曝光模式-拉近-远镜头-焦距" class="headerlink" title="聚焦模式,曝光模式,拉近/远镜头(焦距)"></a>聚焦模式,曝光模式,拉近/远镜头(焦距)</h5><p>同时存在单击和双击的手势,咱们如下设置,<code>requireGestureRecognizerToFail</code>的作用就是每次只生效一个手势</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)addGenstureRecognizer&#123;</div><div class="line">    </div><div class="line">    <span class="built_in">UITapGestureRecognizer</span> *singleTapGesture=[[<span class="built_in">UITapGestureRecognizer</span> alloc]initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(singleTap:)];</div><div class="line">    singleTapGesture.numberOfTapsRequired = <span class="number">1</span>;</div><div class="line">    singleTapGesture.delaysTouchesBegan = <span class="literal">YES</span>;</div><div class="line"></div><div class="line">    <span class="built_in">UITapGestureRecognizer</span> *doubleTapGesture=[[<span class="built_in">UITapGestureRecognizer</span> alloc]initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(doubleTap:)];</div><div class="line">    doubleTapGesture.numberOfTapsRequired = <span class="number">2</span>;</div><div class="line">    doubleTapGesture.delaysTouchesBegan = <span class="literal">YES</span>;</div><div class="line">    </div><div class="line">    [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];</div><div class="line">    [<span class="keyword">self</span>.videoView addGestureRecognizer:singleTapGesture];</div><div class="line">    [<span class="keyword">self</span>.videoView addGestureRecognizer:doubleTapGesture];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>单击修改聚焦模式<code>setFocusMode</code>及聚焦点<code>setFocusPointOfInterest</code>,还有曝光模式<code>setExposureMode</code>及曝光点<code>setExposurePointOfInterest</code></p>
+<p>注意,摄像头的点范围是0~1,咱们需要把点转化一下,使用<code>captureDevicePointOfInterestForPoint</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)singleTap:(<span class="built_in">UITapGestureRecognizer</span> *)tapGesture&#123;</div><div class="line">    </div><div class="line">    <span class="built_in">CGPoint</span> point= [tapGesture locationInView:<span class="keyword">self</span>.videoView];</div><div class="line">    </div><div class="line">    <span class="built_in">CGPoint</span> cameraPoint= [_captureVideoPreviewLayer captureDevicePointOfInterestForPoint:point];</div><div class="line">    [<span class="keyword">self</span> setFocusCursorAnimationWithPoint:point];</div><div class="line">    </div><div class="line">    [<span class="keyword">self</span> changeDevicePropertySafety:^(<span class="built_in">AVCaptureDevice</span> *captureDevice) &#123;</div><div class="line">        </div><div class="line">        <span class="comment">//聚焦</span></div><div class="line">        <span class="keyword">if</span> ([captureDevice isFocusModeSupported:<span class="built_in">AVCaptureFocusModeContinuousAutoFocus</span>]) &#123;</div><div class="line">            [captureDevice setFocusMode:<span class="built_in">AVCaptureFocusModeContinuousAutoFocus</span>];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="built_in">NSLog</span>(<span class="string">@"聚焦模式修改失败"</span>);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">//聚焦点的位置</span></div><div class="line">        <span class="keyword">if</span> ([captureDevice isFocusPointOfInterestSupported]) &#123;</div><div class="line">            [captureDevice setFocusPointOfInterest:cameraPoint];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">//曝光模式</span></div><div class="line">        <span class="keyword">if</span> ([captureDevice isExposureModeSupported:<span class="built_in">AVCaptureExposureModeAutoExpose</span>]) &#123;</div><div class="line">            [captureDevice setExposureMode:<span class="built_in">AVCaptureExposureModeAutoExpose</span>];</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="built_in">NSLog</span>(<span class="string">@"曝光模式修改失败"</span>);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">//曝光点的位置</span></div><div class="line">        <span class="keyword">if</span> ([captureDevice isExposurePointOfInterestSupported]) &#123;</div><div class="line">            [captureDevice setExposurePointOfInterest:cameraPoint];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面是双击设置焦距<code>videoZoomFactor</code></p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)<span class="string">doubleTap:</span>(UITapGestureRecognizer *)tapGesture&#123;</div><div class="line">    </div><div class="line">    NSLog(@<span class="string">"双击"</span>);</div><div class="line">    </div><div class="line">    [self <span class="string">changeDevicePropertySafety:</span>^(AVCaptureDevice *captureDevice) &#123;</div><div class="line">        <span class="keyword">if</span> (captureDevice.videoZoomFactor == <span class="number">1.0</span>) &#123;</div><div class="line">            CGFloat current = <span class="number">1.5</span>;</div><div class="line">            <span class="keyword">if</span> (current &lt; captureDevice.activeFormat.videoMaxZoomFactor) &#123;</div><div class="line">                [captureDevice <span class="string">rampToVideoZoomFactor:</span>current <span class="string">withRate:</span><span class="number">10</span>];</div><div class="line">            &#125;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            [captureDevice <span class="string">rampToVideoZoomFactor:</span><span class="number">1.0</span> <span class="string">withRate:</span><span class="number">10</span>];</div><div class="line">        &#125;</div><div class="line">    &#125;];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关枚举</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">         <span class="doctag">@constant</span> AVCaptureFocusModeLocked 锁定在当前焦距</div><div class="line">         Indicates that the focus should be locked at the lens' current position.</div><div class="line">         </div><div class="line">         <span class="doctag">@constant</span> AVCaptureFocusModeAutoFocus 自动对焦一次,然后切换到焦距锁定</div><div class="line">         Indicates that the device should autofocus once and then change the focus mode to AVCaptureFocusModeLocked.</div><div class="line">         </div><div class="line">         <span class="doctag">@constant</span> AVCaptureFocusModeContinuousAutoFocus 当需要时.自动调整焦距</div><div class="line">         Indicates that the device should automatically focus when needed.</div><div class="line">         */</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">         <span class="doctag">@constant</span> AVCaptureExposureModeLocked  曝光锁定在当前值</div><div class="line">         Indicates that the exposure should be locked at its current value.</div><div class="line">         </div><div class="line">         <span class="doctag">@constant</span> AVCaptureExposureModeAutoExpose 曝光自动调整一次然后锁定</div><div class="line">         Indicates that the device should automatically adjust exposure once and then change the exposure mode to AVCaptureExposureModeLocked.</div><div class="line">         </div><div class="line">         <span class="doctag">@constant</span> AVCaptureExposureModeContinuousAutoExposure 曝光自动调整</div><div class="line">         Indicates that the device should automatically adjust exposure when needed.</div><div class="line">         </div><div class="line">         <span class="doctag">@constant</span> AVCaptureExposureModeCustom 曝光只根据设定的值来</div><div class="line">         Indicates that the device should only adjust exposure according to user provided ISO, exposureDuration values.</div><div class="line">         </div><div class="line">         */</div></pre></td></tr></table></figure>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>终于说完了,感觉越到后面越无力,还是放上一个 demo 吧,里面包含了上面介绍的两种方式.</p>
+<p><a href="https://github.com/kevinMkY/MKCustomCamera" target="_blank" rel="external">Demo 下载地址</a></p>
+<blockquote class="blockquote-center"><br>原创文章,转载请注明地址:   <a href="https://kevinmky.github.io" target="_blank" rel="external">https://kevinmky.github.io</a><br></blockquote>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/相机/" rel="tag">#相机</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/27/crash-日志解析/" rel="prev">crash 日志解析</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/17/webP-在-iOS-中的应用/" rel="next">webP 在 iOS 中的应用</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/01/04/自定义相机/"
+     data-title="iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)"
+     data-content=""
+     data-url="http://yoursite.com/2016/01/04/自定义相机/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/01/04/自定义相机/"
+                   data-title="iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)" data-url="http://yoursite.com/2016/01/04/自定义相机/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xn5aw.com1.z0.glb.clouddn.com/avatar.jpg" alt="KevinMkY" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">KevinMkY</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">take something normal and turn it into something extraordinary —— 取于平凡，创出非凡</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/kevinMkY" target="_blank">My github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/ykhme" target="_blank">Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jianshu.com/users/fce038424835/latest_articles" target="_blank">简书</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.stackoverflow.com" target="_blank">Stackoverflow</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://segmentfault.com/" target="_blank">Segmentfault</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://blog.sunnyxx.com/" target="_blank">Sunnyxx</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://blog.devtang.com" target="_blank">Devtang</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.onevcat.com" target="_blank">OneV's Den</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.meniny.cn/" target="_blank">Meniny</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://sejasonwang.github.io" target="_blank">Jason</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://smilezsm.github.io/" target="_blank">Grace</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://sun-fox-cj.github.io/" target="_blank">VassilyChi</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIImagePickerController"><span class="nav-number">1.1.</span> <span class="nav-text">UIImagePickerController</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVCaptureSession"><span class="nav-number">1.2.</span> <span class="nav-text">AVCaptureSession</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UIImagePickerController-1"><span class="nav-number">2.1.</span> <span class="nav-text">UIImagePickerController</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">2.1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理相关"><span class="nav-number">2.1.3.</span> <span class="nav-text">代理相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVCaptureSession-1"><span class="nav-number">2.2.</span> <span class="nav-text">AVCaptureSession</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#流程"><span class="nav-number">2.2.1.</span> <span class="nav-text">流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详解各部分"><span class="nav-number">2.2.2.</span> <span class="nav-text">详解各部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#授权"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">授权</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据流程创建对象"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">根据流程创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AVCaptureSession-2"><span class="nav-number">2.2.2.2.1.</span> <span class="nav-text">AVCaptureSession</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#AVCaptureDevice"><span class="nav-number">2.2.2.2.2.</span> <span class="nav-text">AVCaptureDevice</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#video-相关"><span class="nav-number">2.2.2.2.2.1.</span> <span class="nav-text">video 相关</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#audio-相关"><span class="nav-number">2.2.2.2.2.2.</span> <span class="nav-text">audio 相关</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#AVCaptureVideoPreviewLayer"><span class="nav-number">2.2.2.2.2.3.</span> <span class="nav-text">AVCaptureVideoPreviewLayer</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#录制相关delegate"><span class="nav-number">2.2.2.2.3.</span> <span class="nav-text">录制相关delegate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#压缩-保存视频"><span class="nav-number">2.2.2.2.4.</span> <span class="nav-text">压缩/保存视频</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#播放录制完的视频以及重复播放"><span class="nav-number">2.2.2.2.5.</span> <span class="nav-text">播放录制完的视频以及重复播放</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交互相关"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">交互相关</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#开-关闪光灯"><span class="nav-number">2.2.2.3.1.</span> <span class="nav-text">开/关闪光灯</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#切换摄像头"><span class="nav-number">2.2.2.3.2.</span> <span class="nav-text">切换摄像头</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚焦模式-曝光模式-拉近-远镜头-焦距"><span class="nav-number">2.2.2.3.3.</span> <span class="nav-text">聚焦模式,曝光模式,拉近/远镜头(焦距)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Demo"><span class="nav-number">2.3.</span> <span class="nav-text">Demo</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinMkY</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kevinMkY"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

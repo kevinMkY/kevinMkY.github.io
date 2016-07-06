@@ -1,0 +1,780 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1"/>
+
+
+    <meta name="description" content="take something normal and turn it into something extraordinary —— 取于平凡，创出非凡" />
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KevinMkY's Blog" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+
+
+<meta name="description" content="webP格式图片在iOS中的应用,详见内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webP 在 iOS 中的应用">
+<meta property="og:url" content="http://yoursite.com/2015/12/17/webP-在-iOS-中的应用/index.html">
+<meta property="og:site_name" content="KevinMkY's Blog">
+<meta property="og:description" content="webP格式图片在iOS中的应用,详见内">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-0.png">
+<meta property="og:image" content="http://isux.tencent.com/wp-content/uploads/2014/12/20141212164211465-590x201.png">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-1.png">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-3.png">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpwebP%20加载%20html.gif">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-2.png">
+<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-4.png">
+<meta property="og:updated_time" content="2015-12-18T10:13:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webP 在 iOS 中的应用">
+<meta name="twitter:description" content="webP格式图片在iOS中的应用,详见内">
+<meta name="twitter:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-0.png">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+  <title> webP 在 iOS 中的应用 | KevinMkY's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-68244604-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a43d4774ccab81ad2148caa9f101c13a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-next-logo"></i>
+      </span>
+      <span class="site-title">KevinMkY's Blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-next-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-next-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-next-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oFFquytRAbsGLfvhPT6j','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              webP 在 iOS 中的应用
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-17T18:17:02+08:00" content="2015-12-17">
+            2015-12-17
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/2015/12/17/webP-在-iOS-中的应用/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/17/webP-在-iOS-中的应用/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><blockquote class="blockquote-center"><br><br>    webP格式图片在iOS中的应用,详见内<br><br></blockquote>
+
+<a id="more"></a>
+<h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>本篇来源于<a href="https://github.com/amfe/article/issues/21" target="_blank" rel="external">15年双11手淘前端技术巡演 - H5性能最佳实践(点我打开)</a>,它们在采用了 <a href="http://baike.baidu.com/link?url=_M-vZznamGoy9nLEfu1eBsfqb8HUWPOwc0yfYF5TUcWjGiJBVT6sY8UEeyNkITM7_e8L_7aL_oiVuhKef5foEK" target="_blank" rel="external">webp格式(点我打开)</a> 的图片后,网络数据传输大幅减少</p>
+<p>以及腾讯发布的 <a href="http://isux.tencent.com/introduction-of-webp.html" target="_blank" rel="external">webp探寻之路(点我打开)</a>都可以拿出非常漂亮的数据让我们转到 webP 的怀抱(至少部分)</p>
+<p>下面是 taobao 的优化对比图</p>
+<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-0.png" width="705" height="911"></p>
+<p>下面是 腾讯的 图片格式对比图</p>
+<p><img src="http://isux.tencent.com/wp-content/uploads/2014/12/20141212164211465-590x201.png" width="798" height="273"></p>
+<p>可以看到有非常的实用价值,下面我们看看如何引入到具体项目中</p>
+<h1 id="webp-在-iOS中-的应用"><a href="#webp-在-iOS中-的应用" class="headerlink" title="webp 在 iOS中 的应用"></a>webp 在 iOS中 的应用</h1><h2 id="本地采用-webP-图片"><a href="#本地采用-webP-图片" class="headerlink" title="本地采用 webP 图片"></a>本地采用 webP 图片</h2><h3 id="下载第三方库"><a href="#下载第三方库" class="headerlink" title="下载第三方库"></a>下载第三方库</h3><p>很幸运,SDWebImage里面有个webP 框架,可以将<code>webp</code>–&gt;<code>NSData</code>–&gt;<code>UIImage</code>最后变为可识别的图片格式直接给控件调用</p>
+<p>但是我在<a href="https://github.com/rs/SDWebImage" target="_blank" rel="external">SDWebImage 的 github(点击跳转)</a>上看见了下面这段话</p>
+<blockquote>
+<p>There are 3 subspecs available now: Core, MapKit and WebP (this means you can install only some of the SDWebImage modules. By default, you get just Core, so if you need WebP, you need to specify it).</p>
+<p>Podfile example:</p>
+<p>$pod ‘SDWebImage/WebP’</p>
+</blockquote>
+<p>也就是说我们需要额外下载这个<code>webP</code>库,注意,这个会从 google 下载,如果失败,开 VPN 试试,下载完成后,文件结构如下</p>
+<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-1.png" width="352" height="361"></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>SDWebImage 的源码如下,我们直接使用转化出的 <code>UIImage</code> 即可</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#ifdef SD_WEBP</span></div><div class="line"></div><div class="line"><span class="meta">#import <span class="meta-string">&lt;UIKit/UIKit.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="comment">// Fix for issue #416 Undefined symbols for architecture armv7 since WebP introduction when deploying to device</span></div><div class="line"><span class="keyword">void</span> WebPInitPremultiplyNEON(<span class="keyword">void</span>);</div><div class="line"></div><div class="line"><span class="keyword">void</span> WebPInitUpsamplersNEON(<span class="keyword">void</span>);</div><div class="line"></div><div class="line"><span class="keyword">void</span> VP8DspInitNEON(<span class="keyword">void</span>);</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">UIImage</span> (<span class="title">WebP</span>)</span></div><div class="line"></div><div class="line">+ (<span class="built_in">UIImage</span> *)sd_imageWithWebPData:(<span class="built_in">NSData</span> *)data;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="meta">#endif</span></div></pre></td></tr></table></figure>
+<h3 id="别的办法"><a href="#别的办法" class="headerlink" title="别的办法"></a>别的办法</h3><p>据了解,还有部分三方库也可以…但是我没有进行研究了,我觉得原理应该都差不多,下面重点要说的是和 taobao 一样,如何在 webView 和网络传输中如何使用<code>webp</code></p>
+<h2 id="在-webView-中实用-webP"><a href="#在-webView-中实用-webP" class="headerlink" title="在 webView 中实用 webP"></a>在 webView 中实用 webP</h2><p>先给一个 <code>webP</code> 测试 html: <a href="http://testing.yongche.org/webp.html" target="_blank" rel="external">http://testing.yongche.org/webp.html</a></p>
+<p><code>html</code> 的代码如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>webp<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://testing.yongche.org/images/150X1501.webp” width = 50 ,height = 20&gt;</span></span></div><div class="line">        &lt;img src="<span class="attr">http:</span>//<span class="attr">testing.yongche.org</span>/<span class="attr">images</span>/<span class="attr">150X1501.webp</span>"&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="第一个办法-和-JS-协作"><a href="#第一个办法-和-JS-协作" class="headerlink" title="第一个办法 和 JS 协作"></a>第一个办法 和 JS 协作</h3><p>webView 等网页上如果用的是 webP 图片,iOS 直接解析的话,会显示?图片.<br><img src="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-3.png" width="373" height="674"></p>
+<p>后来决定这么搞:</p>
+<p>A. 在网页加载出后截取到 <code>HTML</code> 及内部的 <code>JS</code> 后,调用 <code>JS</code> 预先准备好的方法获取需要转码的 <code>webP</code> 格式图片下载地址(其实一个一个的遍历也行).<br>B. 在App 本地开启线程下载图片,下载完成后,将图片转码由 webP—&gt; png—&gt;Base64(因为实验出直接用 png/jpg 的话 没用)<br>C. 将 Base64及原图片下载地址一一对应调用 <code>JS</code> 准备好的方法进行替换<br>D. 将下载后的图片进行缓存,并进行管理</p>
+<p>注意点:<br>A. 图片在最终显示成功前会显示成?,此处为了用户体验应该采用占位图片<br>B. 图片显示成功前应该保持网页布局不调整,需要由 JS 预先设置好布局<br>C. 图片在本地的缓存需要管理</p>
+<p>相应的,<code>HTML</code>需要更改代码,如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>webp<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">            <span class="keyword">var</span> YongChe = &#123;&#125;;</div><div class="line">            YongChe.getAllWebPImg = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                <span class="keyword">var</span> images = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'img'</span>); </div><div class="line">                <span class="keyword">var</span> srcList = [];</div><div class="line">                <span class="keyword">var</span> patt1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\.webp$"</span>);</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; images.length; i++) &#123;</div><div class="line">                    <span class="keyword">if</span>(patt1.test(images[i].src)) &#123;</div><div class="line">                        srcList.push(images[i].src);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                <span class="built_in">console</span>.log(srcList);</div><div class="line">                <span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(srcList);</div><div class="line">            &#125;</div><div class="line">            YongChe.replaceWebPImg = <span class="function"><span class="keyword">function</span>(<span class="params">src, localPath</span>) </span>&#123;</div><div class="line">                alert(localPath);</div><div class="line">                elementList = <span class="built_in">document</span>.querySelectorAll(<span class="string">'img[src="'</span>+src+<span class="string">'"]'</span>);</div><div class="line">                <span class="built_in">console</span>.log(elementList);</div><div class="line">                <span class="keyword">for</span>(element <span class="keyword">in</span> elementList) &#123;</div><div class="line">                    elementList[element].src = localPath;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://testing.yongche.org/images/150X1501.webp” width = 50 ,height = 20&gt;</span></span></div><div class="line">        &lt;img src="<span class="attr">http:</span>//<span class="attr">testing.yongche.org</span>/<span class="attr">images</span>/<span class="attr">150X1501.webp</span>"&gt;</div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">            <span class="built_in">console</span>.log(YongChe.getAllWebPImg());</div><div class="line">            YongChe.replaceWebPImg(<span class="string">'http://testing.yongche.org/images/logo.png'</span>,<span class="string">'http://testing.yongche.org/images/150X1501.webp'</span>)</div><div class="line">		<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>App本地也需要做出相应的措施</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在 `webView` 加载完 `HTML` 后,解析源码,执行相应的 `JS` 方法</span></div><div class="line">-(<span class="keyword">void</span>)webViewDidFinishLoad:(<span class="built_in">UIWebView</span> *)webView</div><div class="line">&#123;</div><div class="line">	<span class="comment">//获取`HTML`代码</span></div><div class="line">    <span class="built_in">NSString</span> *lJs = <span class="string">@"document.documentElement.innerHTML"</span>;</div><div class="line">    <span class="built_in">NSString</span> *str = [webView stringByEvaluatingJavaScriptFromString:lJs];</div><div class="line"></div><div class="line">    <span class="comment">//执行约定好的方法,获取需要下载的 webp 图片</span></div><div class="line">    <span class="built_in">NSString</span> *imgs = [<span class="keyword">self</span>.webView stringByEvaluatingJavaScriptFromString:<span class="string">@"YongChe.getAllWebPImg();"</span>];</div><div class="line">    <span class="built_in">NSArray</span> *array = [<span class="built_in">NSJSONSerialization</span> JSONObjectWithData:[imgs dataUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>] options:<span class="number">0</span> error:<span class="literal">nil</span>];</div><div class="line">    </div><div class="line">    <span class="comment">//此处,做示范,只转换第一个,将图片下载下来,并且转为 PNG 后,再转成 Base64,传给 JS 脚本执行</span></div><div class="line">    <span class="built_in">NSString</span> *imgUrl = array.firstObject;</div><div class="line">        </div><div class="line">    __<span class="keyword">weak</span> <span class="keyword">typeof</span> (<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line">    </div><div class="line">    [SDWebImageCustomeDownLoad downloadWithURL:[<span class="built_in">NSURL</span> URLWithString:imgUrl] progress:<span class="literal">nil</span> completed:^(<span class="built_in">UIImage</span> *image, <span class="built_in">NSError</span> *error, SDImageCacheType cacheType, <span class="built_in">NSURL</span> *imageURL) &#123;</div><div class="line">        </div><div class="line">        <span class="built_in">NSString</span> *base = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"data:image/png;base64,%@"</span>,imgBase];</div><div class="line">        </div><div class="line">        <span class="built_in">NSString</span> *js = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"YongChe.replaceWebPImg('%@','%@')"</span>,imageURL,base];</div><div class="line">        </div><div class="line">        [weakSelf.webView stringByEvaluatingJavaScriptFromString:js];</div><div class="line">    &#125;];</div><div class="line">       </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面这个方法是修改 <code>SDWebImage</code> 自带的,本来是属于 <code>UIImage</code>的分类方法,此处只是提取出下载这个操作,并没有深入更改,大家别介意<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)<span class="string">downloadWithURL:</span>(NSURL *)url <span class="string">progress:</span>(SDWebImageDownloaderProgressBlock)progressBlock <span class="string">completed:</span>(SDWebImageCompletionBlock)completedBlock</div><div class="line">&#123;</div><div class="line"><span class="comment">//    [self sd_cancelCurrentImageLoad];</span></div><div class="line"><span class="comment">//    objc_setAssociatedObject(self, &amp;imageURLKey, url, OBJC_ASSOCIATION_RETAIN_NONATOMIC);</span></div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (url) &#123;</div><div class="line"><span class="comment">//        __weak __typeof(self)wself = self;</span></div><div class="line">        id &lt;SDWebImageOperation&gt; operation = [SDWebImageManager.sharedManager <span class="string">downloadImageWithURL:</span>url <span class="string">options:</span><span class="number">0</span> <span class="string">progress:</span>progressBlock <span class="string">completed:</span>^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) &#123;</div><div class="line"><span class="comment">//            if (!wself) return;</span></div><div class="line">            dispatch_main_sync_safe(^&#123;</div><div class="line"><span class="comment">//                if (!wself) return;</span></div><div class="line">                <span class="keyword">if</span> (image &amp;&amp; completedBlock)</div><div class="line">                &#123;</div><div class="line">                    completedBlock(image, error, cacheType, url);</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (image) &#123;   <span class="comment">//没有回调,但是图片下载完成了</span></div><div class="line">                    </div><div class="line">                    </div><div class="line">                &#125; <span class="keyword">else</span> &#123;    <span class="comment">//image 下载失败</span></div><div class="line">                    </div><div class="line"></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span> (completedBlock &amp;&amp; finished) &#123;</div><div class="line">                    completedBlock(image, error, cacheType, url);</div><div class="line">                &#125;</div><div class="line">            &#125;);</div><div class="line">        &#125;];</div><div class="line">        </div><div class="line">        <span class="comment">//这一步,将这个 View 之前的下载操作全部取消,然后将这次的操作放进去</span></div><div class="line">        </div><div class="line"><span class="comment">//        [self sd_setImageLoadOperation:operation forKey:@"UIImageViewImageLoad"];</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        dispatch_main_async_safe(^&#123;</div><div class="line">            NSError *error = [NSError <span class="string">errorWithDomain:</span>SDWebImageErrorDomain <span class="string">code:</span><span class="number">-1</span> <span class="string">userInfo:</span>@&#123;<span class="string">NSLocalizedDescriptionKey :</span> @<span class="string">"Trying to load a nil url"</span>&#125;];</div><div class="line">            <span class="keyword">if</span> (completedBlock) &#123;</div><div class="line">                completedBlock(nil, error, SDImageCacheTypeNone, url);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/webpwebP%20加载%20html.gif" width="373" height="674"></p>
+<p>只能说成功了,但是看着效果明显很龊,下面说说其他办法</p>
+<h3 id="第二种办法-NSURLProtocol"><a href="#第二种办法-NSURLProtocol" class="headerlink" title="第二种办法 NSURLProtocol"></a>第二种办法 NSURLProtocol</h3><h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>采用 <code>webP</code> 的目的就是减少网络传输数据量,加快请求整体速度,现在的问题就在于 <code>webView</code> 不识别 <code>webP</code> 这种格式而已,再想想 iOS内的所有网络请求/响应我们都可以控制,那我们获取到数据时,转化成它识别的给它就可以了,而可以帮我们在拿到数据时进行某些操作,操作完以后又正常进行网络流程的,就是接下来的主角了 — <code>NSURLProtocol</code>,如果大家和我一样平时用的少的话,可以看看 <code>JamesYu</code> 的这篇简书 <a href="http://www.jianshu.com/p/0244e431fb3c" target="_blank" rel="external">iOS中的 NSURLProtocol</a> </p>
+<p>再看 taobao 前辈们的说法:</p>
+<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-2.png" width="782" height="138"></p>
+<p>估计也是这样做的, OK. 那开撸</p>
+<h4 id="NSURLProtocol"><a href="#NSURLProtocol" class="headerlink" title="NSURLProtocol"></a>NSURLProtocol</h4><h5 id="自定义一个-YCCustomURLProtocol-继承自-NSURLProtocol"><a href="#自定义一个-YCCustomURLProtocol-继承自-NSURLProtocol" class="headerlink" title="自定义一个 YCCustomURLProtocol 继承自 NSURLProtocol"></a>自定义一个 <code>YCCustomURLProtocol</code> 继承自 <code>NSURLProtocol</code></h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">&lt;Foundation/Foundation.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">YCCustomURLProtocol</span> : <span class="title">NSURLProtocol</span></span></div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<h5 id="在-delegate-注册下这个协议"><a href="#在-delegate-注册下这个协议" class="headerlink" title="在 delegate 注册下这个协议"></a>在 delegate 注册下这个协议</h5><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</div><div class="line">    </div><div class="line">    <span class="comment">//注册protocol</span></div><div class="line">	[<span class="built_in">NSURLProtocol</span> registerClass:[CustomURLProtocol <span class="keyword">class</span>]];</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="实现协议内容"><a href="#实现协议内容" class="headerlink" title="实现协议内容"></a>实现协议内容</h5><p>有几个注意点: </p>
+<ol>
+<li><code>NSURLConnection</code> 活跃的iOS版本,<code>NSURLSession</code> 可以酌情代替之</li>
+<li>不论 <code>NSURLConnection</code> 还是 <code>NSURLSession</code>,尽量把 <code>URLProtocol didFailWithError</code> <code>URLProtocol DidFinishLoading</code> <code>URLProtocol didLoadData</code> <code>URLProtocol didReceiveResponse</code> 几个方法写全,避免网络请求产生不可预知的 BUG</li>
+<li>暂时就这些</li>
+</ol>
+<h6 id="NSURLConnection"><a href="#NSURLConnection" class="headerlink" title="NSURLConnection"></a>NSURLConnection</h6><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"YCCustomURLProtocol.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"UIImage+WebP.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> *URLProtocolHandledKey = <span class="string">@"URLHasHandle"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">YCCustomURLProtocol</span>()&lt;<span class="title">NSURLSessionDelegate</span>,<span class="title">NSURLSessionDataDelegate</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>) <span class="built_in">NSURLConnection</span> *connection;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">YCCustomURLProtocol</span></span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark 初始化请求</span></div><div class="line"></div><div class="line">+ (<span class="built_in">BOOL</span>)canInitWithRequest:(<span class="built_in">NSURLRequest</span> *)request</div><div class="line">&#123;</div><div class="line">    <span class="comment">//只处理http和https请求</span></div><div class="line">    <span class="built_in">NSString</span> *scheme = [[request URL] scheme];</div><div class="line">    <span class="keyword">if</span> ( ([scheme caseInsensitiveCompare:<span class="string">@"http"</span>] == <span class="built_in">NSOrderedSame</span> ||</div><div class="line">          [scheme caseInsensitiveCompare:<span class="string">@"https"</span>] == <span class="built_in">NSOrderedSame</span>))</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//看看是否已经处理过了，防止无限循环</span></div><div class="line">        <span class="keyword">if</span> ([<span class="built_in">NSURLProtocol</span> propertyForKey:URLProtocolHandledKey inRequest:request]) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (<span class="built_in">NSURLRequest</span> *) canonicalRequestForRequest:(<span class="built_in">NSURLRequest</span> *)request &#123;</div><div class="line">    <span class="keyword">return</span> request;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 通信协议内容实现</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)startLoading</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSMutableURLRequest</span> *mutableReqeust = [[<span class="keyword">self</span> request] mutableCopy];</div><div class="line">    <span class="comment">//标示改request已经处理过了，防止无限循环</span></div><div class="line">    [<span class="built_in">NSURLProtocol</span> setProperty:@YES forKey:URLProtocolHandledKey inRequest:mutableReqeust];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (![[<span class="keyword">self</span>.request.URL absoluteString] hasSuffix:<span class="string">@"webp"</span>]) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"正常请求,让它 goon "</span>);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"检测到了 webp---%@,拦截它"</span>,<span class="keyword">self</span>.request.URL);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">self</span>.connection = [<span class="built_in">NSURLConnection</span> connectionWithRequest:mutableReqeust delegate:<span class="keyword">self</span>];    </div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)stopLoading</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span>.connection cancel];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 请求管理 connection</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>) connection:(<span class="built_in">NSURLConnection</span> *)connection didReceiveResponse:(<span class="built_in">NSURLResponse</span> *)response &#123;</div><div class="line"></div><div class="line">    [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didReceiveResponse:response cacheStoragePolicy:<span class="built_in">NSURLCacheStorageNotAllowed</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>) connection:(<span class="built_in">NSURLConnection</span> *)connection didReceiveData:(<span class="built_in">NSData</span> *)data &#123;</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> ([connection.currentRequest.URL.absoluteString hasSuffix:<span class="string">@"webp"</span>]) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"webp---%@---替换它"</span>,connection);</div><div class="line">        <span class="built_in">UIImage</span> *imgData = [<span class="built_in">UIImage</span> sd_imageWithWebPData:data];</div><div class="line">        <span class="built_in">NSData</span> *jpgData = <span class="built_in">UIImageJPEGRepresentation</span>(imgData, <span class="number">1.0</span>f);</div><div class="line">        [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didLoadData:jpgData];</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didLoadData:data];</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>) connectionDidFinishLoading:(<span class="built_in">NSURLConnection</span> *)connection &#123;</div><div class="line">    [<span class="keyword">self</span>.client URLProtocolDidFinishLoading:<span class="keyword">self</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)connection:(<span class="built_in">NSURLConnection</span> *)connection didFailWithError:(<span class="built_in">NSError</span> *)error &#123;</div><div class="line">    [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didFailWithError:error];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="NSURLSession"><a href="#NSURLSession" class="headerlink" title="NSURLSession"></a>NSURLSession</h6><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"YCCustomURLProtocol.h"</span></span></div><div class="line"><span class="meta">#import <span class="meta-string">"UIImage+WebP.h"</span></span></div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="built_in">NSString</span> *URLProtocolHandledKey = <span class="string">@"URLHasHandle"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">YCCustomURLProtocol</span>()&lt;<span class="title">NSURLSessionDelegate</span>,<span class="title">NSURLSessionDataDelegate</span>&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">strong</span>) <span class="built_in">NSURLSession</span> *session;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">YCCustomURLProtocol</span></span></div><div class="line"></div><div class="line"><span class="meta">#pragma mark 初始化请求</span></div><div class="line"></div><div class="line">+ (<span class="built_in">BOOL</span>)canInitWithRequest:(<span class="built_in">NSURLRequest</span> *)request</div><div class="line">&#123;</div><div class="line">    <span class="comment">//只处理http和https请求</span></div><div class="line">    <span class="built_in">NSString</span> *scheme = [[request URL] scheme];</div><div class="line">    <span class="keyword">if</span> ( ([scheme caseInsensitiveCompare:<span class="string">@"http"</span>] == <span class="built_in">NSOrderedSame</span> ||</div><div class="line">          [scheme caseInsensitiveCompare:<span class="string">@"https"</span>] == <span class="built_in">NSOrderedSame</span>))</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//看看是否已经处理过了，防止无限循环</span></div><div class="line">        <span class="keyword">if</span> ([<span class="built_in">NSURLProtocol</span> propertyForKey:URLProtocolHandledKey inRequest:request]) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (<span class="built_in">NSURLRequest</span> *) canonicalRequestForRequest:(<span class="built_in">NSURLRequest</span> *)request &#123;</div><div class="line">    <span class="keyword">return</span> request;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark 通信协议内容实现</span></div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)startLoading</div><div class="line">&#123;</div><div class="line">    <span class="built_in">NSMutableURLRequest</span> *mutableReqeust = [[<span class="keyword">self</span> request] mutableCopy];</div><div class="line">    <span class="comment">//标示改request已经处理过了，防止无限循环</span></div><div class="line">    [<span class="built_in">NSURLProtocol</span> setProperty:@YES forKey:URLProtocolHandledKey inRequest:mutableReqeust];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (![[<span class="keyword">self</span>.request.URL absoluteString] hasSuffix:<span class="string">@"webp"</span>]) &#123;</div><div class="line">       <span class="built_in">NSLog</span>(<span class="string">@"是一个正常的,%@"</span>,<span class="keyword">self</span>.request.URL);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"检测到了 webp---%@,拦截它"</span>,<span class="keyword">self</span>.request.URL);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">NSURLSessionConfiguration</span> *config = [<span class="built_in">NSURLSessionConfiguration</span> defaultSessionConfiguration];</div><div class="line">    <span class="keyword">self</span>.session = [<span class="built_in">NSURLSession</span> sessionWithConfiguration:config delegate:<span class="keyword">self</span> delegateQueue:[<span class="built_in">NSOperationQueue</span> currentQueue]];</div><div class="line">    [[<span class="keyword">self</span>.session dataTaskWithRequest:mutableReqeust] resume];</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)stopLoading</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span>.session invalidateAndCancel];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#pragma mark dataDelegate</span></div><div class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session dataTask:(<span class="built_in">NSURLSessionDataTask</span> *)dataTask didReceiveResponse:(<span class="built_in">NSURLResponse</span> *)response completionHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSURLSessionResponseDisposition</span> disposition))completionHandler</div><div class="line">&#123;    </div><div class="line">    [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didReceiveResponse:response cacheStoragePolicy:<span class="built_in">NSURLCacheStorageNotAllowed</span>];</div><div class="line">    </div><div class="line">    <span class="keyword">if</span> (completionHandler) &#123;</div><div class="line">        completionHandler(<span class="built_in">NSURLSessionResponseAllow</span>);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session dataTask:(<span class="built_in">NSURLSessionDataTask</span> *)dataTask didReceiveData:(<span class="built_in">NSData</span> *)data&#123;</div><div class="line">    </div><div class="line">    <span class="built_in">NSData</span> *transData = data;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> ([dataTask.currentRequest.URL.absoluteString hasSuffix:<span class="string">@"webp"</span>]) &#123;</div><div class="line">        <span class="built_in">NSLog</span>(<span class="string">@"webp---%@---替换它"</span>,dataTask.currentRequest.URL);</div><div class="line">        <span class="comment">//采用 SDWebImage 的转换方法</span></div><div class="line">        <span class="built_in">UIImage</span> *imgData = [<span class="built_in">UIImage</span> sd_imageWithWebPData:data];</div><div class="line">        transData = <span class="built_in">UIImageJPEGRepresentation</span>(imgData, <span class="number">1.0</span>f);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didLoadData:transData];</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)URLSession:(<span class="built_in">NSURLSession</span> *)session task:(<span class="built_in">NSURLSessionTask</span> *)task didCompleteWithError:(<span class="keyword">nullable</span> <span class="built_in">NSError</span> *)error&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (error) &#123;</div><div class="line">        </div><div class="line">        [<span class="keyword">self</span>.client URLProtocol:<span class="keyword">self</span> didFailWithError:error];</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        </div><div class="line">        [<span class="keyword">self</span>.client URLProtocolDidFinishLoading:<span class="keyword">self</span>];</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="实际效果"><a href="#实际效果" class="headerlink" title="实际效果"></a>实际效果</h6><p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/webpQQ20151218-4.png" width="373" height="674"></p>
+<h1 id="结尾语"><a href="#结尾语" class="headerlink" title="结尾语"></a>结尾语</h1><p>ok, 至此已经全部成功,不过 <code>NSURLProtocol</code> 会影响 App 内所有请求,稍有遗漏的话后果比较严重,大家一定要慎重.不过相比效果,电商类 App 采用大量图片的话还是值得转换到 <code>webP</code> 阵营的</p>
+<p>谢谢观看,个人水平有限,如有遗漏/不妥,请指出</p>
+<blockquote class="blockquote-center"><br>原创文章,转载请注明地址:   <a href="https://kevinmky.github.io" target="_blank" rel="external">https://kevinmky.github.io</a><br></blockquote></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/04/自定义相机/" rel="prev">iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/17/扩大按钮点击范围/" rel="next">扩大按钮点击范围</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/17/webP-在-iOS-中的应用/"
+     data-title="webP 在 iOS 中的应用"
+     data-content=""
+     data-url="http://yoursite.com/2015/12/17/webP-在-iOS-中的应用/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/12/17/webP-在-iOS-中的应用/"
+                   data-title="webP 在 iOS 中的应用" data-url="http://yoursite.com/2015/12/17/webP-在-iOS-中的应用/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://7xn5aw.com1.z0.glb.clouddn.com/avatar.jpg" alt="KevinMkY" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">KevinMkY</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">take something normal and turn it into something extraordinary —— 取于平凡，创出非凡</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/kevinMkY" target="_blank">My github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/ykhme" target="_blank">Weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.jianshu.com/users/fce038424835/latest_articles" target="_blank">简书</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.stackoverflow.com" target="_blank">Stackoverflow</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://segmentfault.com/" target="_blank">Segmentfault</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://blog.sunnyxx.com/" target="_blank">Sunnyxx</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://blog.devtang.com" target="_blank">Devtang</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.onevcat.com" target="_blank">OneV's Den</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.meniny.cn/" target="_blank">Meniny</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://sejasonwang.github.io" target="_blank">Jason</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://smilezsm.github.io/" target="_blank">Grace</a>
+              </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://sun-fox-cj.github.io/" target="_blank">VassilyChi</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#webp-在-iOS中-的应用"><span class="nav-number">2.</span> <span class="nav-text">webp 在 iOS中 的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地采用-webP-图片"><span class="nav-number">2.1.</span> <span class="nav-text">本地采用 webP 图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载第三方库"><span class="nav-number">2.1.1.</span> <span class="nav-text">下载第三方库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.1.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#别的办法"><span class="nav-number">2.1.3.</span> <span class="nav-text">别的办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-webView-中实用-webP"><span class="nav-number">2.2.</span> <span class="nav-text">在 webView 中实用 webP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个办法-和-JS-协作"><span class="nav-number">2.2.1.</span> <span class="nav-text">第一个办法 和 JS 协作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#效果"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种办法-NSURLProtocol"><span class="nav-number">2.2.2.</span> <span class="nav-text">第二种办法 NSURLProtocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分析"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NSURLProtocol"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">NSURLProtocol</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义一个-YCCustomURLProtocol-继承自-NSURLProtocol"><span class="nav-number">2.2.2.2.1.</span> <span class="nav-text">自定义一个 YCCustomURLProtocol 继承自 NSURLProtocol</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在-delegate-注册下这个协议"><span class="nav-number">2.2.2.2.2.</span> <span class="nav-text">在 delegate 注册下这个协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#实现协议内容"><span class="nav-number">2.2.2.2.3.</span> <span class="nav-text">实现协议内容</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#NSURLConnection"><span class="nav-number">2.2.2.2.3.1.</span> <span class="nav-text">NSURLConnection</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#NSURLSession"><span class="nav-number">2.2.2.2.3.2.</span> <span class="nav-text">NSURLSession</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#实际效果"><span class="nav-number">2.2.2.2.3.3.</span> <span class="nav-text">实际效果</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结尾语"><span class="nav-number">3.</span> <span class="nav-text">结尾语</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KevinMkY</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kevinMkY"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
