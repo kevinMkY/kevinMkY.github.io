@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="iOS," />
 
 
 
@@ -41,46 +41,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="一.新建SSH key：先进到对应目录
-$cd~/.ssh$ssh-keygen -t rsa -C”your@email.com”
-
-需要分别生成3对私钥&amp;amp;公钥,而且分别命名好
-github
-公司的
-oschina
-
-注意名字Enter fileinwhichto save the key (/c/Users/Administrator/.ssh/id_rsa):id_rsa_XXX
-二">
+<meta name="description" content="1.添加音量监听,KVO1234567- (void)addAudioListen&amp;#123;    [[AVAudioSession sharedInstance] addObserver:self                                      forKeyPath:@&quot;outputVolume&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一台电脑使用多个 SSH 授权">
-<meta property="og:url" content="http://yoursite.com/2016/02/29/一台电脑使用多个-SSH-授权/index.html">
+<meta property="og:title" content="监听iPhone音量按键操作">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/监听iPhone音量按键操作/index.html">
 <meta property="og:site_name" content="KevinMkY's Blog">
-<meta property="og:description" content="一.新建SSH key：先进到对应目录
-$cd~/.ssh$ssh-keygen -t rsa -C”your@email.com”
-
-需要分别生成3对私钥&amp;amp;公钥,而且分别命名好
-github
-公司的
-oschina
-
-注意名字Enter fileinwhichto save the key (/c/Users/Administrator/.ssh/id_rsa):id_rsa_XXX
-二">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/ssh%2F1.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/ssh%2F2.png">
-<meta property="og:updated_time" content="2016-03-02T08:08:27.000Z">
+<meta property="og:description" content="1.添加音量监听,KVO1234567- (void)addAudioListen&amp;#123;    [[AVAudioSession sharedInstance] addObserver:self                                      forKeyPath:@&quot;outputVolume&quot;">
+<meta property="og:updated_time" content="2016-07-12T10:53:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一台电脑使用多个 SSH 授权">
-<meta name="twitter:description" content="一.新建SSH key：先进到对应目录
-$cd~/.ssh$ssh-keygen -t rsa -C”your@email.com”
-
-需要分别生成3对私钥&amp;amp;公钥,而且分别命名好
-github
-公司的
-oschina
-
-注意名字Enter fileinwhichto save the key (/c/Users/Administrator/.ssh/id_rsa):id_rsa_XXX
-二">
-<meta name="twitter:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/ssh%2F1.png">
+<meta name="twitter:title" content="监听iPhone音量按键操作">
+<meta name="twitter:description" content="1.添加音量监听,KVO1234567- (void)addAudioListen&amp;#123;    [[AVAudioSession sharedInstance] addObserver:self                                      forKeyPath:@&quot;outputVolume&quot;">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -90,7 +60,7 @@ oschina
   };
 </script>
 
-  <title> 一台电脑使用多个 SSH 授权 | KevinMkY's Blog </title>
+  <title> 监听iPhone音量按键操作 | KevinMkY's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -229,7 +199,7 @@ oschina
           
           
             
-              一台电脑使用多个 SSH 授权
+              监听iPhone音量按键操作
             
           
         </h1>
@@ -238,8 +208,8 @@ oschina
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-02-29T17:09:22+08:00" content="2016-02-29">
-            2016-02-29
+          <time itemprop="dateCreated" datetime="2016-07-12T18:44:45+08:00" content="2016-07-12">
+            2016-07-12
           </time>
         </span>
 
@@ -249,8 +219,8 @@ oschina
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/02/29/一台电脑使用多个-SSH-授权/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/一台电脑使用多个-SSH-授权/" itemprop="commentsCount"></span>
+              <a href="/2016/07/12/监听iPhone音量按键操作/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/12/监听iPhone音量按键操作/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -264,48 +234,33 @@ oschina
       
 
       
-        <span itemprop="articleBody"><h1 id="一-新建SSH-key："><a href="#一-新建SSH-key：" class="headerlink" title="一.新建SSH key："></a>一.新建SSH key：</h1><h2 id="先进到对应目录"><a href="#先进到对应目录" class="headerlink" title="先进到对应目录"></a>先进到对应目录</h2><blockquote>
-<p>$cd~/.ssh<br>$ssh-keygen -t rsa -C”your@email.com”</p>
-</blockquote>
-<h2 id="需要分别生成3对私钥-amp-公钥-而且分别命名好"><a href="#需要分别生成3对私钥-amp-公钥-而且分别命名好" class="headerlink" title="需要分别生成3对私钥&amp;公钥,而且分别命名好"></a>需要分别生成3对私钥&amp;公钥,而且分别命名好</h2><ol>
-<li>github</li>
-<li>公司的</li>
-<li>oschina</li>
-</ol>
-<h2 id="注意名字"><a href="#注意名字" class="headerlink" title="注意名字"></a>注意名字</h2><p>Enter fileinwhichto save the key (/c/Users/Administrator/.ssh/id_rsa):id_rsa_XXX</p>
-<h1 id="二-生成-config-文件"><a href="#二-生成-config-文件" class="headerlink" title="二.生成 config 文件"></a>二.生成 config 文件</h1><blockquote>
-<p>$touch config</p>
-</blockquote>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/ssh%2F1.png" width="219" "="" height="“294""></p>
-<h2 id="然后将下列内容拷贝进去-注意如果有红色下划线表示拷贝有问题-自己要重新输入下"><a href="#然后将下列内容拷贝进去-注意如果有红色下划线表示拷贝有问题-自己要重新输入下" class="headerlink" title="然后将下列内容拷贝进去(注意如果有红色下划线表示拷贝有问题,自己要重新输入下)"></a>然后将下列内容拷贝进去(注意如果有红色下划线表示拷贝有问题,自己要重新输入下)</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Host github<span class="selector-class">.com</span></div><div class="line">  HostName github<span class="selector-class">.com</span></div><div class="line">  User git</div><div class="line">  IdentityFile ~/.ssh/github_rsa</div><div class="line"></div><div class="line">Host oschina<span class="selector-class">.net</span></div><div class="line">  HostName git<span class="selector-class">.oschina</span><span class="selector-class">.net</span></div><div class="line">  User git</div><div class="line">  IdentityFile ~/.ssh/id_rsa_oschina</div></pre></td></tr></table></figure>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/ssh%2F2.png" width="371" height="211"></p>
-<p>此处我省略了公司的,是因为公司的名字为 id_rsa,即是默认的那个</p>
-<h1 id="三-将pub-的公钥复制到对应网站里的-SSH-处黏贴"><a href="#三-将pub-的公钥复制到对应网站里的-SSH-处黏贴" class="headerlink" title="三.将pub 的公钥复制到对应网站里的 SSH 处黏贴"></a>三.将pub 的公钥复制到对应网站里的 SSH 处黏贴</h1><h1 id="四-在命令行测试连接"><a href="#四-在命令行测试连接" class="headerlink" title="四.在命令行测试连接"></a>四.在命令行测试连接</h1><figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</div><div class="line">回应 : Hi XXX! </div><div class="line"></div><div class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@git</span>.oschina.net</div><div class="line">回应 <span class="symbol">:Welcome</span> to Git<span class="variable">@OSC</span>, XXX!</div></pre></td></tr></table></figure>
-<p>等到上面的回应,则表示成功</p>
-<h1 id="五-如果还是报错Permission-denied-publickey"><a href="#五-如果还是报错Permission-denied-publickey" class="headerlink" title="五.如果还是报错Permission denied (publickey)."></a>五.如果还是报错<code>Permission denied (publickey).</code></h1><p>则在命令行瞅瞅目前都有哪些 key 被添加进去了</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ssh-add -l</div><div class="line"></div><div class="line">$<span class="number">2048</span> <span class="string">SHA256:</span>XXX <span class="regexp">/Users/</span>XXX<span class="regexp">/.ssh/</span>id_rsa (RSA)</div><div class="line">$<span class="number">2048</span> <span class="string">SHA256:</span>XXX <span class="regexp">/Users/</span>XXX<span class="regexp">/.ssh/</span>github_rsa (RSA)</div><div class="line">$<span class="number">2048</span> <span class="string">SHA256:</span>XXX <span class="regexp">/Users/</span>XXX<span class="regexp">/.ssh/</span>id_rsa_gitoschina (RSA)</div></pre></td></tr></table></figure>
-<p>如果没有在里面发现最新创建的 id_rsa 文件,则主动添加进去</p>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">$ssh</span>-add /Users/XXX/.ssh/id_rsa_gitoschina</span></div></pre></td></tr></table></figure>
-<p>并且和上面写的 <code>config</code> 里的文件名对应好</p>
-<p>再重复步骤四测试连接</p>
-<blockquote class="blockquote-center"><br>原创文章,转载请注明地址:   <a href="https://kevinmky.github.io" target="_blank" rel="external">https://kevinmky.github.io</a><br></blockquote></span>
+        <span itemprop="articleBody"><h1 id="1-添加音量监听-KVO"><a href="#1-添加音量监听-KVO" class="headerlink" title="1.添加音量监听,KVO"></a>1.添加音量监听,KVO</h1><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addAudioListen</div><div class="line">&#123;</div><div class="line">    [[<span class="built_in">AVAudioSession</span> sharedInstance] addObserver:<span class="keyword">self</span></div><div class="line">                                      forKeyPath:<span class="string">@"outputVolume"</span></div><div class="line">                                         options:<span class="built_in">NSKeyValueObservingOptionNew</span> | <span class="built_in">NSKeyValueObservingOptionOld</span></div><div class="line">                                         context:(<span class="keyword">void</span> *)[<span class="built_in">AVAudioSession</span> sharedInstance]];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="2-判断是否处理本次通知"><a href="#2-判断是否处理本次通知" class="headerlink" title="2.判断是否处理本次通知"></a>2.判断是否处理本次通知</h1><p>因为这个通知可能会发送多次,所以我们需要确认通知名,<code>keypath</code>名,以及<code>value</code>变化</p>
+<p>当<code>old</code>&gt;<code>new</code>则是减小音量,反之则是加大音量</p>
+<p>注意,第一次调用这个方法时,不论你之前音量是多少,<code>old</code>值都为0,所以此时要注意过滤</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)observeValueForKeyPath:(<span class="built_in">NSString</span> *)keyPath ofObject:(<span class="keyword">id</span>)object change:(<span class="built_in">NSDictionary</span>&lt;<span class="built_in">NSString</span> *,<span class="keyword">id</span>&gt; *)change context:(<span class="keyword">void</span> *)context</div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (object == [<span class="built_in">AVAudioSession</span> sharedInstance] &amp;&amp; [keyPath isEqualToString:<span class="string">@"outputVolume"</span>]) &#123;</div><div class="line">        <span class="keyword">float</span> new = [change[<span class="string">@"new"</span>] floatValue];</div><div class="line">        <span class="keyword">float</span> old = [change[<span class="string">@"old"</span>] floatValue];</div><div class="line">        </div><div class="line">        <span class="meta">#your code here</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="3-移除监听"><a href="#3-移除监听" class="headerlink" title="3.移除监听"></a>3.移除监听</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeAudioListen&#123;</div><div class="line">	[[AVAudioSession sharedInstance] <span class="string">removeObserver:</span>self <span class="string">forKeyPath:</span>@<span class="string">"outputVolume"</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure></span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
+          
+        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/15/分类方法tips/" rel="prev">分类方法tips</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/27/crash-日志解析/" rel="next">crash 日志解析</a>
+              <a href="/2016/07/06/本地模拟APNS远程推送/" rel="next">本地模拟APNS远程推送</a>
             
           </div>
         </div>
@@ -320,10 +275,10 @@ oschina
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/02/29/一台电脑使用多个-SSH-授权/"
-     data-title="一台电脑使用多个 SSH 授权"
+        <div class="ds-share flat" data-thread-key="2016/07/12/监听iPhone音量按键操作/"
+     data-title="监听iPhone音量按键操作"
      data-content=""
-     data-url="http://yoursite.com/2016/02/29/一台电脑使用多个-SSH-授权/">
+     data-url="http://yoursite.com/2016/07/12/监听iPhone音量按键操作/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -349,8 +304,8 @@ oschina
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2016/02/29/一台电脑使用多个-SSH-授权/"
-                   data-title="一台电脑使用多个 SSH 授权" data-url="http://yoursite.com/2016/02/29/一台电脑使用多个-SSH-授权/">
+              <div class="ds-thread" data-thread-key="2016/07/12/监听iPhone音量按键操作/"
+                   data-title="监听iPhone音量按键操作" data-url="http://yoursite.com/2016/07/12/监听iPhone音量按键操作/">
               </div>
             
           </div>
@@ -490,7 +445,7 @@ oschina
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-新建SSH-key："><span class="nav-number">1.</span> <span class="nav-text">一.新建SSH key：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先进到对应目录"><span class="nav-number">1.1.</span> <span class="nav-text">先进到对应目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要分别生成3对私钥-amp-公钥-而且分别命名好"><span class="nav-number">1.2.</span> <span class="nav-text">需要分别生成3对私钥&公钥,而且分别命名好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意名字"><span class="nav-number">1.3.</span> <span class="nav-text">注意名字</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-生成-config-文件"><span class="nav-number">2.</span> <span class="nav-text">二.生成 config 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#然后将下列内容拷贝进去-注意如果有红色下划线表示拷贝有问题-自己要重新输入下"><span class="nav-number">2.1.</span> <span class="nav-text">然后将下列内容拷贝进去(注意如果有红色下划线表示拷贝有问题,自己要重新输入下)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-将pub-的公钥复制到对应网站里的-SSH-处黏贴"><span class="nav-number">3.</span> <span class="nav-text">三.将pub 的公钥复制到对应网站里的 SSH 处黏贴</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四-在命令行测试连接"><span class="nav-number">4.</span> <span class="nav-text">四.在命令行测试连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-如果还是报错Permission-denied-publickey"><span class="nav-number">5.</span> <span class="nav-text">五.如果还是报错Permission denied (publickey).</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-添加音量监听-KVO"><span class="nav-number">1.</span> <span class="nav-text">1.添加音量监听,KVO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-判断是否处理本次通知"><span class="nav-number">2.</span> <span class="nav-text">2.判断是否处理本次通知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-移除监听"><span class="nav-number">3.</span> <span class="nav-text">3.移除监听</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
