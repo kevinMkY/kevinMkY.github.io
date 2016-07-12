@@ -2,6 +2,8 @@
 <html class="theme-next use-motion theme-next-mist">
 <head>
   
+    
+
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -41,16 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="1.添加音量监听,KVO1234567- (void)addAudioListen&amp;#123;    [[AVAudioSession sharedInstance] addObserver:self                                      forKeyPath:@&quot;outputVolume&quot;">
+<meta name="description" content="iOS7以上均可用,采用KVO方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="监听iPhone音量按键操作">
 <meta property="og:url" content="http://yoursite.com/2016/07/12/监听iPhone音量按键操作/index.html">
 <meta property="og:site_name" content="KevinMkY's Blog">
-<meta property="og:description" content="1.添加音量监听,KVO1234567- (void)addAudioListen&amp;#123;    [[AVAudioSession sharedInstance] addObserver:self                                      forKeyPath:@&quot;outputVolume&quot;">
-<meta property="og:updated_time" content="2016-07-12T10:53:41.000Z">
+<meta property="og:description" content="iOS7以上均可用,采用KVO方式">
+<meta property="og:updated_time" content="2016-07-12T10:55:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="监听iPhone音量按键操作">
-<meta name="twitter:description" content="1.添加音量监听,KVO1234567- (void)addAudioListen&amp;#123;    [[AVAudioSession sharedInstance] addObserver:self                                      forKeyPath:@&quot;outputVolume&quot;">
+<meta name="twitter:description" content="iOS7以上均可用,采用KVO方式">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -234,7 +236,10 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="1-添加音量监听-KVO"><a href="#1-添加音量监听-KVO" class="headerlink" title="1.添加音量监听,KVO"></a>1.添加音量监听,KVO</h1><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addAudioListen</div><div class="line">&#123;</div><div class="line">    [[<span class="built_in">AVAudioSession</span> sharedInstance] addObserver:<span class="keyword">self</span></div><div class="line">                                      forKeyPath:<span class="string">@"outputVolume"</span></div><div class="line">                                         options:<span class="built_in">NSKeyValueObservingOptionNew</span> | <span class="built_in">NSKeyValueObservingOptionOld</span></div><div class="line">                                         context:(<span class="keyword">void</span> *)[<span class="built_in">AVAudioSession</span> sharedInstance]];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><blockquote class="blockquote-center"><br><br>iOS7以上均可用,采用KVO方式<br><br></blockquote>
+
+<a id="more"></a>
+<h1 id="1-添加音量监听-KVO"><a href="#1-添加音量监听-KVO" class="headerlink" title="1.添加音量监听,KVO"></a>1.添加音量监听,KVO</h1><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addAudioListen</div><div class="line">&#123;</div><div class="line">    [[<span class="built_in">AVAudioSession</span> sharedInstance] addObserver:<span class="keyword">self</span></div><div class="line">                                      forKeyPath:<span class="string">@"outputVolume"</span></div><div class="line">                                         options:<span class="built_in">NSKeyValueObservingOptionNew</span> | <span class="built_in">NSKeyValueObservingOptionOld</span></div><div class="line">                                         context:(<span class="keyword">void</span> *)[<span class="built_in">AVAudioSession</span> sharedInstance]];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="2-判断是否处理本次通知"><a href="#2-判断是否处理本次通知" class="headerlink" title="2.判断是否处理本次通知"></a>2.判断是否处理本次通知</h1><p>因为这个通知可能会发送多次,所以我们需要确认通知名,<code>keypath</code>名,以及<code>value</code>变化</p>
 <p>当<code>old</code>&gt;<code>new</code>则是减小音量,反之则是加大音量</p>
 <p>注意,第一次调用这个方法时,不论你之前音量是多少,<code>old</code>值都为0,所以此时要注意过滤</p>
