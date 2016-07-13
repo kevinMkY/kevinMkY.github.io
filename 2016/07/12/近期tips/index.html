@@ -41,33 +41,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="前言作为一个程序员,和八阿哥(BUG) 打交道是家常便饭,而苹果也帮我们生成了很多 crash 日志来帮助我们分析错误的产生.
-下面主要说说如何用辅助工具symbolicatecrash通过分析dSYM等文件产生有用的 log 日志
-获取工具/文件先去应用程序–&amp;gt; Xocde–&amp;gt;右键显示报内容,然后根据下面图片显示,一步一步找到symbolicatecrash文件,接下来,咱们把它备份">
+<meta name="description" content="1.operation的优先级
+3.button在scroll上,可能快速点击的时候,高亮失效,但是长按还是有,这个时候设置scrollView.delaysContentTouches = NO;
+4.hittest  &amp;amp;&amp;amp;  手势识别
+5.collectionview的自定义布局http://www.cnblogs.com/ludashi/p/4826818.html
+prep">
 <meta property="og:type" content="article">
-<meta property="og:title" content="crash 日志解析">
-<meta property="og:url" content="http://yoursite.com/2016/01/27/crash-日志解析/index.html">
+<meta property="og:title" content="近期tips">
+<meta property="og:url" content="http://yoursite.com/2016/07/12/近期tips/index.html">
 <meta property="og:site_name" content="KevinMkY's Blog">
-<meta property="og:description" content="前言作为一个程序员,和八阿哥(BUG) 打交道是家常便饭,而苹果也帮我们生成了很多 crash 日志来帮助我们分析错误的产生.
-下面主要说说如何用辅助工具symbolicatecrash通过分析dSYM等文件产生有用的 log 日志
-获取工具/文件先去应用程序–&amp;gt; Xocde–&amp;gt;右键显示报内容,然后根据下面图片显示,一步一步找到symbolicatecrash文件,接下来,咱们把它备份">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-0.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-1.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-2.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-6.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-7.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-4.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-8.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2F112.jpg">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160201-0.png">
-<meta property="og:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160201-0%402x.png">
-<meta property="og:updated_time" content="2016-02-01T06:51:29.000Z">
+<meta property="og:description" content="1.operation的优先级
+3.button在scroll上,可能快速点击的时候,高亮失效,但是长按还是有,这个时候设置scrollView.delaysContentTouches = NO;
+4.hittest  &amp;amp;&amp;amp;  手势识别
+5.collectionview的自定义布局http://www.cnblogs.com/ludashi/p/4826818.html
+prep">
+<meta property="og:updated_time" content="2016-07-12T11:49:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="crash 日志解析">
-<meta name="twitter:description" content="前言作为一个程序员,和八阿哥(BUG) 打交道是家常便饭,而苹果也帮我们生成了很多 crash 日志来帮助我们分析错误的产生.
-下面主要说说如何用辅助工具symbolicatecrash通过分析dSYM等文件产生有用的 log 日志
-获取工具/文件先去应用程序–&amp;gt; Xocde–&amp;gt;右键显示报内容,然后根据下面图片显示,一步一步找到symbolicatecrash文件,接下来,咱们把它备份">
-<meta name="twitter:image" content="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-0.png">
+<meta name="twitter:title" content="近期tips">
+<meta name="twitter:description" content="1.operation的优先级
+3.button在scroll上,可能快速点击的时候,高亮失效,但是长按还是有,这个时候设置scrollView.delaysContentTouches = NO;
+4.hittest  &amp;amp;&amp;amp;  手势识别
+5.collectionview的自定义布局http://www.cnblogs.com/ludashi/p/4826818.html
+prep">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -77,7 +72,7 @@
   };
 </script>
 
-  <title> crash 日志解析 | KevinMkY's Blog </title>
+  <title> 近期tips | KevinMkY's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -216,7 +211,7 @@
           
           
             
-              crash 日志解析
+              近期tips
             
           
         </h1>
@@ -225,8 +220,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-01-27T16:13:17+08:00" content="2016-01-27">
-            2016-01-27
+          <time itemprop="dateCreated" datetime="2016-07-12T18:57:32+08:00" content="2016-07-12">
+            2016-07-12
           </time>
         </span>
 
@@ -236,8 +231,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2016/01/27/crash-日志解析/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/27/crash-日志解析/" itemprop="commentsCount"></span>
+              <a href="/2016/07/12/近期tips/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/12/近期tips/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -251,52 +246,12 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为一个程序员,和八阿哥(BUG) 打交道是家常便饭,而苹果也帮我们生成了很多 crash 日志来帮助我们分析错误的产生.</p>
-<p>下面主要说说如何用辅助工具<code>symbolicatecrash</code>通过分析<code>dSYM</code>等文件产生有用的 log 日志</p>
-<h1 id="获取工具-文件"><a href="#获取工具-文件" class="headerlink" title="获取工具/文件"></a>获取工具/文件</h1><p>先去应用程序–&gt; Xocde–&gt;右键显示报内容,然后根据下面图片显示,一步一步找到<code>symbolicatecrash</code>文件,接下来,咱们把它备份到桌面的新建文件夹里去.</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-0.png"></p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-1.png"></p>
-<h2 id="日志文件"><a href="#日志文件" class="headerlink" title="日志文件"></a>日志文件</h2><p>将真机连接 Xcode, 然后按照如下的方式获取 carsh 日志文件</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-2.png"></p>
-<h2 id="dSYM"><a href="#dSYM" class="headerlink" title="dSYM"></a>dSYM</h2><p>debugging SYMbols,又称为调试符号表，是苹果为了方便调试和定位问题而使用的一种调试方案，本质上使用的是起源于贝尔实验室的DWARF（Debugging With Attributed Record Formats).</p>
-<p>对我们分析 crash 起到作用的其实是子目录<code>Contents--Resources--DWARF</code>下的与 App 同名的文件,咱们也把这个单独拷贝出来备用</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-6.png"></p>
-<h2 id="app"><a href="#app" class="headerlink" title="app"></a>app</h2><p> 这个就不用多说了, ipa</p>
-<h2 id="存档每次发布的xcarchive"><a href="#存档每次发布的xcarchive" class="headerlink" title="存档每次发布的xcarchive"></a>存档每次发布的<code>xcarchive</code></h2><p>咱们分析crash, 同时具备了<code>crash日志文件</code>, <code>dSYM</code>,<code>app</code>这3个东西才能开始分析.而 <code>dSYM</code> 和 <code>app</code> 都在我们的<code>xcarchive</code>文件里解包可以得到,这就是为什么我们一定要在每次发布版本的时候,将 xcode 自动生成的<code>xcarchive</code>文件保存/归档.</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-7.png"></p>
-<h1 id="解析过程"><a href="#解析过程" class="headerlink" title="解析过程"></a>解析过程</h1><p>等如下文件齐全了,咱们就可以开始解析了</p>
-<p>1.cd 到下面几个文件的目录下</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-4.png"></p>
-<p>2.输入命令行, XXX.log 或者 XXX.crash,表示将结果输出到 a.log 文件,注意空格</p>
-<blockquote>
-<p>./symbolicatecrash /ABC/iWeidao.crash /ABC/iWeidao.app.dSYM &gt; a.log</p>
-</blockquote>
-<p>3.打开 a.log, 查看<code>Last exception</code>,忽略系统自己的模块/库,将我们自己模块儿的地址纪录下来,此处是 0x100050000),后面多处会用到,</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160127-8.png"></p>
-<p>4.利用<code>atos</code>方法,输入模块地址,进入调试模式,注意<code>armv7 , arm64</code>,根据环境选择一个即可):</p>
-<blockquote>
-<p>$atos -o iWeidao -arch armv7 -l 0x100050000,然后回车</p>
-</blockquote>
-<p>5.此步无报错可忽略,直接进入6 </p>
-<p>假如报错 <code>DEVELOPER_XXX</code> 什么的,输入如下命令,注意 <code>Xcode.app</code> 是与你应用程序里 Xcode 的名称一致的.命令行如下:</p>
-<blockquote>
-<p>$export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer</p>
-</blockquote>
-<p>6.将<code>a.log</code>里每一处自己项目模块崩溃的地址依次输入进去,比如上图里的<code>0x100581ea8</code> <code>0x100569e6c</code>,每输入一次并回车,命令行都会返回当前崩溃所在行 ,比如</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2F112.jpg"></p>
-<p>即可看到具体崩溃所在文件,所在行</p>
-<h1 id="比较-UUID"><a href="#比较-UUID" class="headerlink" title="比较 UUID"></a>比较 UUID</h1><p>有个童鞋问我,如何知道产生crash 日志和咱们分析的dSYM 包是不是同一个,那么,过程如下:</p>
-<p>1.查看 crash 日志那个包的 UUID</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160201-0.png"></p>
-<p>2.查看咱们包的 UUID</p>
-<blockquote>
-<p>$dwarfdump –uuid app.dSYM</p>
-</blockquote>
-<p>结果如下:</p>
-<p><img src="http://7xn5aw.com1.z0.glb.clouddn.com/crash%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%2FQQ20160201-0%402x.png"></p>
-<p>这时候一个是大写,一个是小写,转化后如果是一致的,则表示是同一个包啦~</p>
-<h1 id="谢谢"><a href="#谢谢" class="headerlink" title="谢谢"></a>谢谢</h1><p>这只能帮助我们定位,缩小范围,具体的情况还得靠程序猿们自己努力~fighting~</p>
-<blockquote class="blockquote-center"><br>原创文章,转载请注明地址:   <a href="https://kevinmky.github.io" target="_blank" rel="external">https://kevinmky.github.io</a><br></blockquote></span>
+        <span itemprop="articleBody"><p>1.operation的优先级</p>
+<p>3.button在scroll上,可能快速点击的时候,高亮失效,但是长按还是有,这个时候设置scrollView.delaysContentTouches = NO;</p>
+<p>4.hittest  &amp;&amp;  手势识别</p>
+<p>5.collectionview的自定义布局<br><a href="http://www.cnblogs.com/ludashi/p/4826818.html" target="_blank" rel="external">http://www.cnblogs.com/ludashi/p/4826818.html</a></p>
+<p>preparelayout会在第一次生成布局时执行一次,这个里面可以写好</p>
+</span>
       
     </div>
 
@@ -307,13 +262,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/29/一台电脑使用多个-SSH-授权/" rel="prev">一台电脑使用多个 SSH 授权</a>
+              <a href="/2016/07/13/上架被拒记录/" rel="prev">上架被拒记录</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/04/自定义相机/" rel="next">iOS 自定义相机, UIImagePickerController && AVCaptureSession (附微信小视频模仿demo)</a>
+              <a href="/2016/07/12/监听iPhone音量按键操作/" rel="next">监听iPhone音量按键操作</a>
             
           </div>
         </div>
@@ -328,10 +283,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/27/crash-日志解析/"
-     data-title="crash 日志解析"
+        <div class="ds-share flat" data-thread-key="2016/07/12/近期tips/"
+     data-title="近期tips"
      data-content=""
-     data-url="http://yoursite.com/2016/01/27/crash-日志解析/">
+     data-url="http://yoursite.com/2016/07/12/近期tips/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -357,8 +312,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2016/01/27/crash-日志解析/"
-                   data-title="crash 日志解析" data-url="http://yoursite.com/2016/01/27/crash-日志解析/">
+              <div class="ds-thread" data-thread-key="2016/07/12/近期tips/"
+                   data-title="近期tips" data-url="http://yoursite.com/2016/07/12/近期tips/">
               </div>
             
           </div>
@@ -498,7 +453,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取工具-文件"><span class="nav-number">2.</span> <span class="nav-text">获取工具/文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#日志文件"><span class="nav-number">2.1.</span> <span class="nav-text">日志文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dSYM"><span class="nav-number">2.2.</span> <span class="nav-text">dSYM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app"><span class="nav-number">2.3.</span> <span class="nav-text">app</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存档每次发布的xcarchive"><span class="nav-number">2.4.</span> <span class="nav-text">存档每次发布的xcarchive</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解析过程"><span class="nav-number">3.</span> <span class="nav-text">解析过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比较-UUID"><span class="nav-number">4.</span> <span class="nav-text">比较 UUID</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#谢谢"><span class="nav-number">5.</span> <span class="nav-text">谢谢</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

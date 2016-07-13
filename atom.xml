@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-12T10:55:26.000Z</updated>
+  <updated>2016-07-13T06:47:46.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>上架被拒记录</title>
+    <link href="http://yoursite.com/2016/07/13/%E4%B8%8A%E6%9E%B6%E8%A2%AB%E6%8B%92%E8%AE%B0%E5%BD%95/"/>
+    <id>http://yoursite.com/2016/07/13/上架被拒记录/</id>
+    <published>2016-07-13T06:37:18.000Z</published>
+    <updated>2016-07-13T06:47:46.000Z</updated>
+    
+    <content type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;&lt;br&gt;Appstore上架被拒记录&lt;br&gt;&lt;br&gt;&lt;/blockquote&gt;
+
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;私有Api篇&quot;&gt;&lt;a href=&quot;#私有Api篇&quot; class=&quot;headerlink&quot; title=&quot;私有Api篇&quot;&gt;&lt;/a&gt;私有Api篇&lt;/h1&gt;&lt;p&gt;昨晚发包,证书,账号全都OK,但是在上传成功后(用&lt;code&gt;Application Loader&lt;/code&gt;),在&lt;code&gt;iTunes contact&lt;/code&gt;里短暂的看见App处于&lt;code&gt;正在处理&lt;/code&gt;后,即消失.连续5个包都如此.&lt;/p&gt;
+&lt;p&gt;今天上午收到Apple 的被拒邮件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xn5aw.com1.z0.glb.clouddn.com/appstore_reject@2x.png&quot; width=&quot;2278&quot; height=&quot;768&quot; alt=&quot;email&quot;&gt;&lt;/p&gt;
+&lt;p&gt;原因是包含私有API–_UICreateCGImageFromIOSurface&lt;/p&gt;
+&lt;p&gt;这个API我并没有直接使用,而是&lt;code&gt;Reveal&lt;/code&gt;使用了,也就是说在打包的时候不小心把&lt;code&gt;Reveal&lt;/code&gt;编译到App里,接下来就好办了.&lt;/p&gt;
+&lt;p&gt;重新修改编译选项,再发布.OK&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;&lt;br&gt;Appstore上架被拒记录&lt;br&gt;&lt;br&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>近期tips</title>
+    <link href="http://yoursite.com/2016/07/12/%E8%BF%91%E6%9C%9Ftips/"/>
+    <id>http://yoursite.com/2016/07/12/近期tips/</id>
+    <published>2016-07-12T10:57:32.000Z</published>
+    <updated>2016-07-12T11:49:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1.operation的优先级&lt;/p&gt;
+&lt;p&gt;3.button在scroll上,可能快速点击的时候,高亮失效,但是长按还是有,这个时候设置scrollView.delaysContentTouches = NO;&lt;/p&gt;
+&lt;p&gt;4.hittest  &amp;amp;&amp;amp;  手势识别&lt;/p&gt;
+&lt;p&gt;5.collectionview的自定义布局&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/ludashi/p/4826818.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/ludashi/p/4826818.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;preparelayout会在第一次生成布局时执行一次,这个里面可以写好&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.operation的优先级&lt;/p&gt;
+&lt;p&gt;3.button在scroll上,可能快速点击的时候,高亮失效,但是长按还是有,这个时候设置scrollView.delaysContentTouches = NO;&lt;/p&gt;
+&lt;p&gt;4.hittest  &amp;amp;&amp;amp;  
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>监听iPhone音量按键操作</title>
     <link href="http://yoursite.com/2016/07/12/%E7%9B%91%E5%90%ACiPhone%E9%9F%B3%E9%87%8F%E6%8C%89%E9%94%AE%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2016/07/12/监听iPhone音量按键操作/</id>
     <published>2016-07-12T10:44:45.000Z</published>
-    <updated>2016-07-12T10:55:26.000Z</updated>
+    <updated>2016-07-12T10:55:45.000Z</updated>
     
     <content type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;&lt;br&gt;iOS7以上均可用,采用KVO方式&lt;br&gt;&lt;br&gt;&lt;/blockquote&gt;
 
@@ -951,217 +1003,6 @@
     </summary>
     
       <category term="OC" scheme="http://yoursite.com/categories/OC/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>study/tips collection</title>
-    <link href="http://yoursite.com/2015/10/11/tips-collection/"/>
-    <id>http://yoursite.com/2015/10/11/tips-collection/</id>
-    <published>2015-10-11T12:23:26.000Z</published>
-    <updated>2015-10-14T16:46:20.000Z</updated>
-    
-    <content type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;     世界上没有什么事是一顿烧烤解决不了的,如果有,那就两顿&lt;br&gt;                                                —尼古拉斯·赵四&lt;br&gt;&lt;/blockquote&gt;
-
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;序&quot;&gt;&lt;a href=&quot;#序&quot; class=&quot;headerlink&quot; title=&quot;序&quot;&gt;&lt;/a&gt;序&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;从网络收集整理,资料来自 @sunnyxx , @程序猿(chenyilong)等先驱,此处只作个人备份使用&lt;/p&gt;
-&lt;p&gt;PS:今年9月有幸和 @程序猿(chenyilong) 见了一面,当时人很多,估计 chenyilong 老师不记得我,不过我记得 ta 的诙谐幽默,😄,谁说 coder 都是闷骚的,明明就是明骚&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;lldb（gdb）常用的调试命令？&quot;&gt;&lt;a href=&quot;#lldb（gdb）常用的调试命令？&quot; class=&quot;headerlink&quot; title=&quot;lldb（gdb）常用的调试命令？&quot;&gt;&lt;/a&gt;lldb（gdb）常用的调试命令？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;po(打印)&lt;/li&gt;
-&lt;li&gt;bt(显示最近一次调用的堆栈)&lt;/li&gt;
-&lt;li&gt;next(在不单步执行进入其他函数的情况下，向前执行一行源代码)&lt;/li&gt;
-&lt;li&gt;continue(继续执行正在调试的程序)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;如何调试-BAD-ACCESS-错误&quot;&gt;&lt;a href=&quot;#如何调试-BAD-ACCESS-错误&quot; class=&quot;headerlink&quot; title=&quot;如何调试 BAD_ACCESS 错误&quot;&gt;&lt;/a&gt;如何调试 BAD_ACCESS 错误&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;设置 xcode 环境变量环境变量 NSZombieEnabled 来查看具体位置等&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;IBOutlet-连出来的视图属性为什么可以被设置成-weak&quot;&gt;&lt;a href=&quot;#IBOutlet-连出来的视图属性为什么可以被设置成-weak&quot; class=&quot;headerlink&quot; title=&quot;IBOutlet 连出来的视图属性为什么可以被设置成 weak?&quot;&gt;&lt;/a&gt;IBOutlet 连出来的视图属性为什么可以被设置成 weak?&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;使用storyboard(xib不行)创建的vc,会有一个叫&lt;code&gt;_topLevelObjectsToKeepAliveFromStoryboard&lt;/code&gt;的私有数组强引用所有top level的对象，所以这时即便&lt;code&gt;outlet&lt;/code&gt;声明成weak也没关系&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;IB中User-Defined-Runtime-Attributes如何使用？&quot;&gt;&lt;a href=&quot;#IB中User-Defined-Runtime-Attributes如何使用？&quot; class=&quot;headerlink&quot; title=&quot;IB中User Defined Runtime Attributes如何使用？&quot;&gt;&lt;/a&gt;IB中User Defined Runtime Attributes如何使用？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;它能够通过KVC的方式配置一些你在interface builder 中不能配置的属性。当你希望在IB中作尽可能多得事情，这个特性能够帮助你编写更加轻量级的viewcontroller&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;为什么对字符串等赋值的时候默认是-copy-的&quot;&gt;&lt;a href=&quot;#为什么对字符串等赋值的时候默认是-copy-的&quot; class=&quot;headerlink&quot; title=&quot;为什么对字符串等赋值的时候默认是 copy 的&quot;&gt;&lt;/a&gt;为什么对字符串等赋值的时候默认是 copy 的&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;用 &lt;code&gt;@property&lt;/code&gt; 声明 NSString、NSArray、NSDictionary 经常使用 copy 关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary，他们之间可能进行赋值操作，为确保对象中的字符串值不会无意间变动，应该在设置新属性值时拷贝一份。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;weak-和-assign-有什么不同&quot;&gt;&lt;a href=&quot;#weak-和-assign-有什么不同&quot; class=&quot;headerlink&quot; title=&quot;weak 和 assign 有什么不同&quot;&gt;&lt;/a&gt;weak 和 assign 有什么不同&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;assigin 可以用非 OC 对象,而 weak 必须用于 OC 对象&lt;/li&gt;
-&lt;li&gt;assigin 引用的对象不会增加引用计数,也不会自动置为 nil,如果该对象销毁,assign 依然访问的话,会造成野指针错误&lt;/li&gt;
-&lt;li&gt;weak 引用的对象如果释放会自动置为 nil, 访问时给 nil 发消息不会崩溃&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;property-的本质是什么？ivar、getter、setter-是如何生成并添加到这个类中的&quot;&gt;&lt;a href=&quot;#property-的本质是什么？ivar、getter、setter-是如何生成并添加到这个类中的&quot; class=&quot;headerlink&quot; title=&quot;@property 的本质是什么？ivar、getter、setter 是如何生成并添加到这个类中的&quot;&gt;&lt;/a&gt;@property 的本质是什么？ivar、getter、setter 是如何生成并添加到这个类中的&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;@property = ivar + getter + setter;&lt;/li&gt;
-&lt;li&gt;属性定义后,编译器在编译期自动编写访问这些属性所需的方法(getter + setter),向类中添加适当类型的实例变量(ivar)，并且在属性名前面加下划线&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;runtime-如何实现-weak-属性&quot;&gt;&lt;a href=&quot;#runtime-如何实现-weak-属性&quot; class=&quot;headerlink&quot; title=&quot;runtime 如何实现 weak 属性&quot;&gt;&lt;/a&gt;runtime 如何实现 weak 属性&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;runtime 对注册的类， 会进行布局，对于 weak 对象会放入一个 hash 表中。 用 weak 指向的对象内存地址作为 key&lt;/li&gt;
-&lt;li&gt;当此对象的引用计数为0的时候会&lt;code&gt;dealloc&lt;/code&gt;，假如 weak 指向的对象内存地址是a，那么就会以a为键， 在这个 weak 表中搜索，找到所有以a为键的 weak 对象，从而设置为 nil。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;ARC下，不显式指定任何属性关键字时，默认的关键字都有哪些？&quot;&gt;&lt;a href=&quot;#ARC下，不显式指定任何属性关键字时，默认的关键字都有哪些？&quot; class=&quot;headerlink&quot; title=&quot;ARC下，不显式指定任何属性关键字时，默认的关键字都有哪些？&quot;&gt;&lt;/a&gt;ARC下，不显式指定任何属性关键字时，默认的关键字都有哪些？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;对应基本数据类型默认关键字是: &lt;code&gt;atomic,readwrite,assign&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;对于普通的OC对象: &lt;code&gt;atomic,readwrite,strong&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;objc中向一个对象发送消息-obj-foo-和objc-msgSend-函数之间有什么关系？&quot;&gt;&lt;a href=&quot;#objc中向一个对象发送消息-obj-foo-和objc-msgSend-函数之间有什么关系？&quot; class=&quot;headerlink&quot; title=&quot;objc中向一个对象发送消息[obj foo]和objc_msgSend()函数之间有什么关系？&quot;&gt;&lt;/a&gt;objc中向一个对象发送消息[obj foo]和objc_msgSend()函数之间有什么关系？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;方法编译之后就是objc_msgSend()函数调用.大概是这样的:&lt;br&gt;&lt;br&gt;&lt;code&gt;((void()(id,SEL))(void)objc_msgSend)((id)obj,sel_registerName(&amp;quot;foo&amp;quot;));&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;也就是说:&lt;code&gt;[obj foo];&lt;/code&gt;在objc动态编译时，会被转意为:&lt;br&gt;&lt;br&gt;&lt;code&gt;objc_msgSend(obj, @selector(foo));&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;对象的内存销毁时间表&quot;&gt;&lt;a href=&quot;#对象的内存销毁时间表&quot; class=&quot;headerlink&quot; title=&quot;对象的内存销毁时间表&quot;&gt;&lt;/a&gt;对象的内存销毁时间表&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;分四个步骤：&lt;br&gt;&lt;figure class=&quot;highlight stata&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 对象的内存销毁时间表&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// http://weibo.com/luohanchenyilong/ (微博@iOS程序犭袁)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// https://github.com/ChenYilong&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 根据 WWDC 2011, Session 322 (36分22秒)中发布的内存销毁时间表 &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 1. 调用 -release ：引用计数变为零&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 对象正在被销毁，生命周期即将结束.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 不能再有新的 __weak 弱引用， 否则将指向 nil.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 调用 [self dealloc] &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 2. 父类 调用 -dealloc&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 继承关系中最底层的父类 在调用 -dealloc&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 如果是 MRC 代码 则会手动释放实例变量们（iVars）&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 继承关系中每一层的父类 都在调用 -dealloc&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 3. NSObject 调 -dealloc&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 只做一件事：调用 Objective-C runtime 中的 object_dispose() 方法&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; 4. 调用 object_dispose()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 为 C++ 的实例变量们（iVars）调用 destructors &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 为 ARC 状态下的 实例变量们（iVars） 调用 -release &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 解除所有使用 runtime Associate方法关联的对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 解除所有 __weak 引用&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;     * 调用 free()&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;objc中的类方法和实例方法有什么本质区别和联系？&quot;&gt;&lt;a href=&quot;#objc中的类方法和实例方法有什么本质区别和联系？&quot; class=&quot;headerlink&quot; title=&quot;objc中的类方法和实例方法有什么本质区别和联系？&quot;&gt;&lt;/a&gt;objc中的类方法和实例方法有什么本质区别和联系？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;figure class=&quot;highlight markdown&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;类方法：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;1. &lt;/span&gt;类方法是属于类对象的&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;2. &lt;/span&gt;类方法只能通过类对象调用&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;3. &lt;/span&gt;类方法中的self是类对象&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;4. &lt;/span&gt;类方法可以调用其他的类方法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;5. &lt;/span&gt;类方法中不能访问成员变量&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;6. &lt;/span&gt;类方法中不定直接调用对象方法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;实例方法：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;1. &lt;/span&gt;实例方法是属于实例对象的&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;2. &lt;/span&gt;实例方法只能通过实例对象调用&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;3. &lt;/span&gt;实例方法中的self是实例对象&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;4. &lt;/span&gt;实例方法中可以访问成员变量&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;5. &lt;/span&gt;实例方法中直接调用实例方法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;6. &lt;/span&gt;实例方法中也可以调用类方法(通过类名)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;runloop和线程有什么关系？&quot;&gt;&lt;a href=&quot;#runloop和线程有什么关系？&quot; class=&quot;headerlink&quot; title=&quot;runloop和线程有什么关系？&quot;&gt;&lt;/a&gt;runloop和线程有什么关系？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;runloop 详解:&lt;a href=&quot;http://blog.csdn.net/wzzvictory/article/details/9237973&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/wzzvictory/article/details/9237973&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;主线程的 run loop 默认是启动的&lt;/li&gt;
-&lt;li&gt;对其它线程来说，run loop 默认是没有启动的&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;可以通过以下代码来获取到当前线程的 run loop&lt;/p&gt;
-&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSRunLoop&lt;/span&gt; *runloop = [&lt;span class=&quot;built_in&quot;&gt;NSRunLoop&lt;/span&gt; currentRunLoop];&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;NSRunLoop 类并不是线程安全的&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;Run loop 同时也负责 autorelease pool 的创建和释放&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;runloop的mode作用是什么？&quot;&gt;&lt;a href=&quot;#runloop的mode作用是什么？&quot; class=&quot;headerlink&quot; title=&quot;runloop的mode作用是什么？&quot;&gt;&lt;/a&gt;runloop的mode作用是什么？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;model 主要是用来指定事件在运行循环中的优先级的，分为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;NSDefaultRunLoopMode（kCFRunLoopDefaultMode）：默认，空闲状态&lt;/li&gt;
-&lt;li&gt;UITrackingRunLoopMode：ScrollView滑动时&lt;/li&gt;
-&lt;li&gt;UIInitializationRunLoopMode：启动时&lt;/li&gt;
-&lt;li&gt;NSRunLoopCommonModes（kCFRunLoopCommonModes）：Mode集合&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;每个 runloop 只能运行在一种 model 下,所以遇到ScrollView滑动时 timer 不响应的问题,将 timer 加入到 NSRunLoopCommonModes 即可&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;以-scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？&quot;&gt;&lt;a href=&quot;#以-scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？&quot; class=&quot;headerlink&quot; title=&quot;以+ scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？&quot;&gt;&lt;/a&gt;以+ scheduledTimerWithTimeInterval…的方式触发的timer，在滑动页面上的列表时，timer会暂定回调，为什么？如何解决？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;ScrollView滚动过程中NSDefaultRunLoopMode（kCFRunLoopDefaultMode）的mode会切换到UITrackingRunLoopMode来保证ScrollView的流畅滑动&lt;/li&gt;
-&lt;li&gt;NSTimer对象以NSDefaultRunLoopMode（kCFRunLoopDefaultMode）添加到主运行循环中的时候, ScrollView滚动过程中会因为mode的切换，而导致NSTimer将不再被调度&lt;/li&gt;
-&lt;li&gt;可以通过将timer添加到NSRunLoopCommonModes（kCFRunLoopCommonModes）来解决&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;runloop内部是如何实现的&quot;&gt;&lt;a href=&quot;#runloop内部是如何实现的&quot; class=&quot;headerlink&quot; title=&quot;runloop内部是如何实现的&quot;&gt;&lt;/a&gt;runloop内部是如何实现的&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;一般来讲，一个线程一次只能执行一个任务，执行完成后线程就会退出。如果我们需要一个机制，让线程能随时处理事件但并不退出,通常的代码逻辑 是这样的:&lt;br&gt;&lt;figure class=&quot;highlight cs&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// http://weibo.com/luohanchenyilong/ (微博@iOS程序犭袁)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// https://github.com/ChenYilong&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; argc, &lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; * argv[]&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;//程序一直运行状态&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; (AppIsRunning) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;//睡眠状态，等待唤醒事件&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      id whoWakesMe = SleepForWakingUp();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;//得到唤醒事件&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      id &lt;span class=&quot;keyword&quot;&gt;event&lt;/span&gt; = GetEvent(whoWakesMe);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;//开始处理事件&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      HandleEvent(&lt;span class=&quot;keyword&quot;&gt;event&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;不手动指定autoreleasepool的前提下，一个autorealese对象在什么时刻释放？&quot;&gt;&lt;a href=&quot;#不手动指定autoreleasepool的前提下，一个autorealese对象在什么时刻释放？&quot; class=&quot;headerlink&quot; title=&quot;不手动指定autoreleasepool的前提下，一个autorealese对象在什么时刻释放？&quot;&gt;&lt;/a&gt;不手动指定autoreleasepool的前提下，一个autorealese对象在什么时刻释放？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;分两种情况：手动干预释放时机、系统自动去释放。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;手动干预释放时机–指定autoreleasepool 就是所谓的：当前作用域大括号结束时释放。&lt;/li&gt;
-&lt;li&gt;系统自动去释放–不手动指定autoreleasepool&lt;br&gt;Autorelease对象出了作用域之后，会被添加到最近一次创建的自动释放池中，并会在当前的 runloop 迭代结束时释放。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;释放的时机总结起来，可以用下图来表示&lt;br&gt;&lt;img src=&quot;https://camo.githubusercontent.com/56f8ea718f47679e7771d247d8f6f820de2e0ab5/687474703a2f2f6936312e74696e797069632e636f6d2f32386b6f6477702e6a7067&quot; alt=&quot;runloop&quot;&gt;&lt;/p&gt;
-&lt;p&gt;下面对这张图进行详细的解释：&lt;/p&gt;
-&lt;p&gt;从程序启动到加载完成是一个完整的运行循环，然后会停下来，等待用户交互，用户的每一次交互都会启动一次运行循环，来处理用户所有的点击事件、触摸事件。&lt;/p&gt;
-&lt;p&gt;我们都是知道： 所有 autorelease 的对象，在出了作用域之后，会被自动添加到最近创建的自动释放池中。&lt;/p&gt;
-&lt;p&gt;但是如果每次都放进应用程序的 main.m 中的 autoreleasepool 中，迟早有被撑满的一刻。这个过程中必定有一个释放的动作。何时？&lt;/p&gt;
-&lt;p&gt;在一次完整的运行循环结束之前，会被销毁。&lt;/p&gt;
-&lt;p&gt;那什么时间会创建自动释放池？运行循环检测到事件并启动后，就会创建自动释放池。&lt;/p&gt;
-&lt;p&gt;子线程的 runloop 默认是不工作，无法主动创建，必须手动创建。&lt;/p&gt;
-&lt;p&gt;自定义的 NSOperation 和 NSThread 需要手动创建自动释放池。比如： 自定义的 NSOperation 类中的 main 方法里就必须添加自动释放池。否则出了作用域后，自动释放对象会因为没有自动释放池去处理它，而造成内存泄露。&lt;/p&gt;
-&lt;p&gt;但对于 blockOperation 和 invocationOperation 这种默认的Operation ，系统已经帮我们封装好了，不需要手动创建自动释放池。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;@autoreleasepool&lt;/code&gt;当自动释放池被销毁或者耗尽时，会向自动释放池中的所有对象发送 release 消息，释放自动释放池中的所有对象。&lt;/p&gt;
-&lt;p&gt;如果在一个vc的&lt;code&gt;viewDidLoad&lt;/code&gt;中创建一个 &lt;code&gt;Autorelease&lt;/code&gt;对象，那么该对象会在 &lt;code&gt;viewDidAppear&lt;/code&gt; 方法执行前就被销毁了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;使用系统的某些block-api（如UIView的block版本写动画时），是否也考虑引用循环问题？&quot;&gt;&lt;a href=&quot;#使用系统的某些block-api（如UIView的block版本写动画时），是否也考虑引用循环问题？&quot; class=&quot;headerlink&quot; title=&quot;使用系统的某些block api（如UIView的block版本写动画时），是否也考虑引用循环问题？&quot;&gt;&lt;/a&gt;使用系统的某些block api（如UIView的block版本写动画时），是否也考虑引用循环问题？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;所谓“引用循环”是指双向的强引用，所以那些“单向的强引用”（block 强引用 self ）没有问题，比如这些：&lt;br&gt;&lt;figure class=&quot;highlight clojure&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[UIView animateWithDuration:duration animations:&lt;span class=&quot;comment&quot;&gt;^&amp;#123; [self.superview layoutIfNeeded]; &amp;#125;&lt;/span&gt;]&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight clojure&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[[NSOperationQueue mainQueue] addOperationWithBlock:&lt;span class=&quot;comment&quot;&gt;^&amp;#123; self.someProperty = xyz; &amp;#125;&lt;/span&gt;]&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight clojure&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[[NSNotificationCenter defaultCenter] addObserverForName:@&lt;span class=&quot;string&quot;&gt;&quot;someNotification&quot;&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                                                  object:nil &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                           queue:[NSOperationQueue mainQueue]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                                              usingBlock:^(&lt;span class=&quot;name&quot;&gt;NSNotification&lt;/span&gt; * notification) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                                                    self.someProperty = xyz; &amp;#125;]&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面这些情况不需要考虑“引用循环”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;BUT&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果你使用一些参数中可能含有 ivar 的系统 api ，如 GCD 、NSNotificationCenter就要小心一点：比如GCD 内部如果引用了 self，而且 GCD 的其他参数是 ivar，则要考虑到循环引用：&lt;br&gt;&lt;figure class=&quot;highlight armasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;__weak&lt;/span&gt; __typeof__(&lt;span class=&quot;keyword&quot;&gt;self) &lt;/span&gt;weakSelf = &lt;span class=&quot;keyword&quot;&gt;self;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;symbol&quot;&gt;dispatch_group_async&lt;/span&gt;(_operationsGroup, _operationsQueue, ^&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     __typeof__(&lt;span class=&quot;keyword&quot;&gt;self) &lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;strongSelf &lt;/span&gt;= weakSelf&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     [&lt;span class=&quot;keyword&quot;&gt;strongSelf &lt;/span&gt;doSomething]&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     [&lt;span class=&quot;keyword&quot;&gt;strongSelf &lt;/span&gt;doSomethingElse]&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; )&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;类似的：&lt;br&gt;&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;__&lt;span class=&quot;keyword&quot;&gt;weak&lt;/span&gt; __typeof__(&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;) weakSelf = &lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;_observer = [[&lt;span class=&quot;built_in&quot;&gt;NSNotificationCenter&lt;/span&gt; defaultCenter] addObserverForName:&lt;span class=&quot;string&quot;&gt;@&quot;testKey&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                                                              object:&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                                                               queue:&lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                                                          usingBlock:^(&lt;span class=&quot;built_in&quot;&gt;NSNotification&lt;/span&gt; *note) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    __typeof__(&lt;span class=&quot;keyword&quot;&gt;self&lt;/span&gt;) strongSelf = weakSelf;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    [strongSelf dismissModalViewControllerAnimated:&lt;span class=&quot;literal&quot;&gt;YES&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;];&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;self –&amp;gt; _observer –&amp;gt; block –&amp;gt; self 显然这也是一个循环引用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）&quot;&gt;&lt;a href=&quot;#如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）&quot; class=&quot;headerlink&quot; title=&quot;如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）&quot;&gt;&lt;/a&gt;如何用GCD同步若干个异步调用？（如根据若干个url异步加载多张图片，然后在都下载完成后合成一张整图）&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;使用Dispatch Group追加block到Global Group Queue,这些block如果全部执行完毕，就会执行Main Dispatch Queue中的结束处理的block。&lt;br&gt;&lt;figure class=&quot;highlight lasso&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dispatch_queue_t &lt;span class=&quot;built_in&quot;&gt;queue&lt;/span&gt; = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dispatch_group_t &lt;span class=&quot;keyword&quot;&gt;group&lt;/span&gt; = dispatch_group_create();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dispatch_group_async(&lt;span class=&quot;keyword&quot;&gt;group&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;queue&lt;/span&gt;, ^&amp;#123; &lt;span class=&quot;comment&quot;&gt;/*加载图片1 */&lt;/span&gt; &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dispatch_group_async(&lt;span class=&quot;keyword&quot;&gt;group&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;queue&lt;/span&gt;, ^&amp;#123; &lt;span class=&quot;comment&quot;&gt;/*加载图片2 */&lt;/span&gt; &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dispatch_group_async(&lt;span class=&quot;keyword&quot;&gt;group&lt;/span&gt;, &lt;span class=&quot;built_in&quot;&gt;queue&lt;/span&gt;, ^&amp;#123; &lt;span class=&quot;comment&quot;&gt;/*加载图片3 */&lt;/span&gt; &amp;#125;); &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dispatch_group_notify(&lt;span class=&quot;keyword&quot;&gt;group&lt;/span&gt;, dispatch_get_main_queue(), ^&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 合并图片&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;若一个类有实例变量-NSString-foo-，调用setValue-forKey-时，可以以foo还是-foo-作为key？&quot;&gt;&lt;a href=&quot;#若一个类有实例变量-NSString-foo-，调用setValue-forKey-时，可以以foo还是-foo-作为key？&quot; class=&quot;headerlink&quot; title=&quot;若一个类有实例变量 NSString *_foo ，调用setValue:forKey:时，可以以foo还是 _foo 作为key？&quot;&gt;&lt;/a&gt;若一个类有实例变量 NSString *_foo ，调用setValue:forKey:时，可以以foo还是 _foo 作为key？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;都可以。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;KVC和KVO的keyPath一定是属性么？&quot;&gt;&lt;a href=&quot;#KVC和KVO的keyPath一定是属性么？&quot; class=&quot;headerlink&quot; title=&quot;KVC和KVO的keyPath一定是属性么？&quot;&gt;&lt;/a&gt;KVC和KVO的keyPath一定是属性么？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;KVO支持实例变量&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;apple用什么方式实现对一个对象的KVO？&quot;&gt;&lt;a href=&quot;#apple用什么方式实现对一个对象的KVO？&quot; class=&quot;headerlink&quot; title=&quot;apple用什么方式实现对一个对象的KVO？&quot;&gt;&lt;/a&gt;apple用什么方式实现对一个对象的KVO？&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;KVO 原理:&lt;br&gt;当你观察一个对象时，一个新的类会被动态创建。这个类继承自该对象的原本的类，并重写了被观察属性的 setter 方法。重写的 setter 方法会负责在调用原 setter 方法之前和之后，通知所有观察对象：值的更改。最后通过 isa 混写（isa-swizzling） 把这个对象的 isa 指针 ( isa 指针告诉 Runtime 系统这个对象的类是什么 ) 指向这个新创建的子类，对象就神奇的变成了新创建的子类的实例。我(chenyilong)画了一张示意图，如下所示：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://camo.githubusercontent.com/9517b0d78961b5f32cf3392b99964f2e1f79fb35/687474703a2f2f6936322e74696e797069632e636f6d2f7379353775722e6a7067&quot; alt=&quot;KVO 原理图&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;详解:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.第一次对一个对象调用 addObserver:forKeyPath:options:context: 时，框架会创建这个类的新的 KVO 子类，并将被观察对象转换为新子类的对象。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.键值观察通知依赖于 NSObject 的两个方法: willChangeValueForKey: 和 didChangevlueForKey:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.在这个 KVO 特殊子类中,Cocoa 创建观察属性的 setter 方法，在一个被观察属性发生改变之前， willChangeValueForKey: 一定会被调用，这就会记录旧的值。而当改变发生后(调用 super 方法执行相关赋值操作)， didChangeValueForKey: 会被调用，继而 observeValueForKey:ofObject:change:context: 也会被调用。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;- (&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt;)&lt;span class=&quot;string&quot;&gt;setNow:&lt;/span&gt;(NSDate *)aDate &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    [self &lt;span class=&quot;string&quot;&gt;willChangeValueForKey:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;now&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    [&lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;setValue:&lt;/span&gt;aDate &lt;span class=&quot;string&quot;&gt;forKey:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;now&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    [self &lt;span class=&quot;string&quot;&gt;didChangeValueForKey:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;now&quot;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这种继承和方法注入是在运行时而不是编译时实现的。这就是正确命名如此重要的原因。只有在使用KVC命名约定时，KVO才能做到这一点。&lt;/p&gt;
-&lt;p&gt;Apple 还重写、覆盖了 -class 方法并返回原来的类,具体过程是:KVO 在实现中通过 isa 混写（isa-swizzling） 把这个对象的 isa 指针 ( isa 指针告诉 Runtime 系统这个对象的类是什么 ) 指向这个新创建的子类，对象就神奇的变成了新创建的子类的实例。&lt;/p&gt;
-&lt;p&gt;具体探究过程可参考 &lt;a href=&quot;https://www.mikeash.com/pyblog/friday-qa-2009-01-23.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.mikeash.com/pyblog/friday-qa-2009-01-23.html&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;如何自己动手实现-KVO&quot;&gt;&lt;a href=&quot;#如何自己动手实现-KVO&quot; class=&quot;headerlink&quot; title=&quot;如何自己动手实现 KVO&quot;&gt;&lt;/a&gt;如何自己动手实现 KVO&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;具体过程可参考&lt;a href=&quot;http://tech.glowing.com/cn/implement-kvo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tech.glowing.com/cn/implement-kvo/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;明天上班了-今天暂告一段落…&quot;&gt;&lt;a href=&quot;#明天上班了-今天暂告一段落…&quot; class=&quot;headerlink&quot; title=&quot;明天上班了,今天暂告一段落…&quot;&gt;&lt;/a&gt;明天上班了,今天暂告一段落…&lt;/h2&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;原创文章,转载请注明地址:   &lt;a href=&quot;https://kevinmky.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://kevinmky.github.io&lt;/a&gt;&lt;br&gt;&lt;/blockquote&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;     世界上没有什么事是一顿烧烤解决不了的,如果有,那就两顿&lt;br&gt;                                                —尼古拉斯·赵四&lt;br&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>WatchKit App 与 iPhone 端显示名称的问题</title>
-    <link href="http://yoursite.com/2015/10/08/WatchKit%20App%20%E4%B8%8E%20iPhone%20%E7%AB%AF%E6%98%BE%E7%A4%BA%E5%90%8D%E7%A7%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2015/10/08/WatchKit App 与 iPhone 端显示名称的问题/</id>
-    <published>2015-10-08T03:05:16.000Z</published>
-    <updated>2015-10-08T04:03:59.000Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h1&gt;&lt;p&gt;今天 Watch 项目被拒了,原因是 Watch 和 iPhone 端 App 显示名称没有做到全部一致.&lt;/p&gt;
-&lt;h1 id=&quot;具体问题&quot;&gt;&lt;a href=&quot;#具体问题&quot; class=&quot;headerlink&quot; title=&quot;具体问题&quot;&gt;&lt;/a&gt;具体问题&lt;/h1&gt;&lt;h2 id=&quot;被拒描述&quot;&gt;&lt;a href=&quot;#被拒描述&quot; class=&quot;headerlink&quot; title=&quot;被拒描述&quot;&gt;&lt;/a&gt;被拒描述&lt;/h2&gt;&lt;figure class=&quot;highlight applescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;While your iTunes Connect Application State shows &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; Metadata Rejected, we don&#39;t require a new binary &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; correct this issue. Once this information &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; available, we can &lt;span class=&quot;keyword&quot;&gt;continue&lt;/span&gt; your review. &lt;span class=&quot;number&quot;&gt;3.4&lt;/span&gt; Details&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;We noticed &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; app &lt;span class=&quot;built_in&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; be displayed &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; App Store &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; app &lt;span class=&quot;built_in&quot;&gt;name&lt;/span&gt; displayed &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; a device do &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; sufficiently match, which makes &lt;span class=&quot;keyword&quot;&gt;it&lt;/span&gt; difficult &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; users &lt;span class=&quot;keyword&quot;&gt;to&lt;/span&gt; find &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; app they just downloaded. The &lt;span class=&quot;built_in&quot;&gt;application&lt;/span&gt; names are:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- Name &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;the&lt;/span&gt; App Store: 我是一个中文名(随便写的)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- Name displayed &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; iPhone: 我是一个中文名&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- Name displayed &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Apple Watch companion app: woshiyigezhongwen&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- Name displayed &lt;span class=&quot;keyword&quot;&gt;on&lt;/span&gt; Apple Watch: 我是一个中文名&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h2&gt;&lt;p&gt;是 iPhone 端的 Apple Watch 这个 App 里项目名称显示不对&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xn5aw.com1.z0.glb.clouddn.com/QQ20151008-1@2x.png&quot; width=&quot;328&quot; height=&quot;328&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h2&gt;&lt;p&gt;1.经过测试,发现修改 Host App 的 info.plist 里的 Bundle Name 为中文可解决&lt;/p&gt;
-&lt;p&gt;但是这个会导致一些其他问题,而且不优雅~ so ,我们一开始就拒绝了&lt;/p&gt;
-&lt;p&gt;2.在 infoplist.strings 里,增加如下字段(记得添加齐全,别漏)&lt;/p&gt;
-&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;CFBundleName&quot;&lt;/span&gt; =&lt;span class=&quot;string&quot;&gt;&quot;我是一个中文&quot;&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;最终效果&quot;&gt;&lt;a href=&quot;#最终效果&quot; class=&quot;headerlink&quot; title=&quot;最终效果&quot;&gt;&lt;/a&gt;最终效果&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xn5aw.com1.z0.glb.clouddn.com/QQ20151008-2@2x.png&quot; width=&quot;328&quot; height=&quot;328&quot;&gt;&lt;/p&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;原创文章,转载请注明地址:   &lt;a href=&quot;https://kevinmky.github.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://kevinmky.github.io&lt;/a&gt;&lt;br&gt;&lt;/blockquote&gt;</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;缘由&quot;&gt;&lt;a href=&quot;#缘由&quot; class=&quot;headerlink&quot; title=&quot;缘由&quot;&gt;&lt;/a&gt;缘由&lt;/h1&gt;&lt;p&gt;今天 Watch 项目被拒了,原因是 Watch 和 iPhone 端 App 显示名称没有做到全部一致.&lt;/p&gt;
-&lt;h1 id=&quot;具体问题
-    
-    </summary>
-    
-      <category term="WatchKit" scheme="http://yoursite.com/categories/WatchKit/"/>
     
     
   </entry>
